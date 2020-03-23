@@ -68,7 +68,8 @@ $this->params['breadcrumbs'][] = $this->title;
             //'tag_eSIM',
             //'progress',
             'progressx.content_progress',
-			'status.content_data_status',	
+			'status.content_data_status',
+			'exp_mp_date',	
 			//'statusy',
             
 			//'name_operation',

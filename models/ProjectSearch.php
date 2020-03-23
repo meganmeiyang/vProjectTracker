@@ -35,7 +35,7 @@ class ProjectSearch extends Project
     {
         return [
             [['id_project', 'role_customer', 'industry_customer', 'quantity_sim', 'type_sim', 'service_data', 'service_platform', 'service_software', 'cycle_data', 'size_data', 'sales_exp_data', 'sales_act_data', 'sales_exp_sim', 'sales_act_sim', 'sales_exp_platform', 'sales_act_platform', 'sales_exp_software', 'sales_act_software', 'sales_exp_total', 'sales_act_total', 'sales_weighed_total', 'tag_eSIM', 'progress', 'statusy', 'mode_selling'], 'integer'],
-            [['created_on', 'role.content_role', 
+            [['created_on', 'role.content_role', 'exp_mp_date',
 				/*new relation*/
 				'progressx.content_progress',
 				'status.content_data_status',
@@ -133,6 +133,7 @@ class ProjectSearch extends Project
         $query->andFilterWhere([
             'id_project' => $this->id_project,
             'created_on' => $this->created_on,
+			'exp_mp_date' => $this->exp_mp_date,
             'role_customer' => $this->role_customer,
             'industry_customer' => $this->industry_customer,
             'quantity_sim' => $this->quantity_sim,

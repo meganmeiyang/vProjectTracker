@@ -54,10 +54,11 @@ class Project extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['created_on', 'Role.content_role'], 'safe'],
+            [['created_on', 'Role.content_role', 'exp_mp_date'], 'safe'],
             [['name_customer', 'name_country'], 'required'],
-            [['quantity_sim', 'type_sim', 'service_data', 'service_platform', 'service_software', 'cycle_data', 'size_data', 'sales_data', 'sales_sim', 'sales_platform', 'sales_software', 'tag_eSIM', 'progress', 'statusy', 'mode_selling', 'industry_customer', 'role_customer'], 'integer'],
-            [['created_by', 'name_customer', 'name_country', 'name_sales', 'name_FAE', 'name_PM', 'name_operation'], 'string', 'max' => 45],
+            [['quantity_sim', 'type_sim', 'service_data', 'service_platform', 'service_software', 'cycle_data', 'size_data', 'sales_exp_data', 'sales_exp_sim', 'sales_exp_platform', 'sales_exp_software', 'sales_act_data','sales_act_sim','sales_act_platform','sales_act_platform','tag_eSIM', 'progress', 'statusy', 'mode_selling', 'industry_customer', 'role_customer'], 'integer'],
+            [['created_by', 'name_customer', 'name_country', 'name_sales', 'name_FAE', 'name_PM', 'name_operation','name_supplier','coverage'], 'string', 'max' => 45],
+			[['exp_mp_date'], 'string', 'max' => 8],
             [['text_requirements', 'text_solutions'], 'string', 'max' => 150],
         ];
     }
@@ -85,11 +86,15 @@ class Project extends \yii\db\ActiveRecord
             'service_software' => 'Service Software',
             'cycle_data' => 'Cycle',
             'size_data' => 'Data Size',
-            'sales_data' => 'Sales Data',
-            'sales_sim' => 'Sales Sim',
-            'sales_platform' => 'Sales Platform',
-            'sales_software' => 'Sales Software',
-            'tag_eSIM' => 'Tag E Sim',
+            'sales_exp_data' => 'Exp Data Sales',
+            'sales_exp_sim' => 'Exp SIM Sales',
+            'sales_exp_platform' => 'Exp Platform Sales',
+            'sales_exp_software' => 'Exp Software Sales',
+			'sales_act_data' => 'Actual Data Sales',
+            'sales_act_sim' => 'Actual SIM Sales',
+            'sales_act_platform' => 'Actual Platform Sales',
+			'sales_act_software' => 'Actual Software Sales',
+            'tag_eSIM' => 'isESIM',
             'progress' => 'Progress',
             'statusy' => 'Status',
             'name_operation' => 'Operator',
@@ -98,6 +103,10 @@ class Project extends \yii\db\ActiveRecord
             'role_customer' => 'Customer Role',
 			'sales_weighed_total' => 'Weighed Sales',
 			'name_supplier' => 'Supplier',
+			'exp_mp_date' => 'Exp MP Date',
+			'sales_exp_total' => 'Exp total sales',
+			'sales_act_total' => 'Actual total sales',
+				
         ];
     }
 

@@ -9,6 +9,7 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
+
 /**
  * ProjectController implements the CRUD actions for Project model.
  */
@@ -79,9 +80,17 @@ class ProjectController extends Controller
     {
         $model = new Project();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id_project]);
-        }
+        if ($model->load(Yii::$app->request->post())) {
+			
+			//created on & created by
+			
+			$model->created_by = Yii::$app->user->identity->username;
+			$model->created_on = date("Y-m-d H:i:s");
+			if($model->save()) {
+			
+           		return $this->redirect(['view', 'id' => $model->id_project]);
+        	}
+		}
 
         return $this->render('create', [
             'model' => $model,
