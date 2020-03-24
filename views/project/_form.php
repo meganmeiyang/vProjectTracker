@@ -72,9 +72,9 @@ use yii\widgets\Pjax;
 		</div>
 	</div>
 	<div class="row">
-	    <div class="col-md-4"><?= $form->field($model, 'coverage')->textInput()->label("Country(ies) to be covered") ?></div>
+	    	<div class="col-md-4"><?= $form->field($model, 'coverage')->textInput()->label("Country(ies) to be covered") ?></div>
 		<div class="col-md-4"><?= $form->field($model, 'size_data')->textInput() ->label("Required data size (MB)") ?></div>
-		<div class="col-md-4"><?= $form->field($model, 'exp_mp_date')->widget(\yii\widgets\MaskedInput::className(), ['mask' => '9999-99',])->label("Targeted Mass Production Date (yyyy-mm)") ?></div>
+		<div class="col-md-4"><?= $form->field($model, 'name_supplier')->textInput()->label("Data Supplier(s)") ?></div>
 	</div>
 <?php
 $script = <<< JS
@@ -125,8 +125,10 @@ $this->registerJs($script);
 	<h4> Progress </h4>
 
     <?= $form->field($model, 'progress')-> radioList([1=>'10%:engaged or demoed', 2=>'20%:hw/sw design completed', 3=>'30%:quoted', 4=>'50%:mgmt accepted', 5=>'60%:poc/sample tested', 6=>'80%:pilot order', 7=>'100%:MP'])->hint("weighed sales = expected sales x progress%") ?>
-
-    
+    <div class="row">
+	<div class="col-md-6"><?= $form->field($model, 'statusy')->dropDownList([1=>'ongoing', 2=>'suspended', 3=>'terminted', 4=>'closed/MP']) </div>   
+	<div class="col-md-6"><?= $form->field($model, 'exp_mp_date')->widget(\yii\widgets\MaskedInput::className(), ['mask' => '9999-99',])->label("Targeted Mass Production Date (yyyy-mm)") ?></div>
+    </div>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
