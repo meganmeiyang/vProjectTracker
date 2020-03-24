@@ -126,7 +126,7 @@ $this->registerJs($script);
 
     <?= $form->field($model, 'progress')-> radioList([1=>'10%:engaged or demoed', 2=>'20%:hw/sw design completed', 3=>'30%:quoted', 4=>'50%:mgmt accepted', 5=>'60%:poc/sample tested', 6=>'80%:pilot order', 7=>'100%:MP'])->hint("weighed sales = expected sales x progress%") ?>
     <div class="row">
-	<div class="col-md-6"><?= $form->field($model, 'statusy')->dropDownList([1=>'ongoing', 2=>'suspended', 3=>'terminted', 4=>'closed/MP']) </div>   
+	<div class="col-md-6"><?= $form->field($model, 'statusy')->dropDownList([1=>'ongoing', 2=>'suspended', 3=>'terminted', 4=>'closed/MP']) ?></div>   
 	<div class="col-md-6"><?= $form->field($model, 'exp_mp_date')->widget(\yii\widgets\MaskedInput::className(), ['mask' => '9999-99',])->label("Targeted Mass Production Date (yyyy-mm)") ?></div>
     </div>
 
