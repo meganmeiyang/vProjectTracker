@@ -67,7 +67,7 @@ $this->params['breadcrumbs'][] = $this->title;
 			//******Platform related fields:
 			[
 				'label'=>'Platform Info:',
-				//'value'=>'',
+				'value'=>'',
 				'captionOptions'=> [
 					'class'=>'text-white bg-orange',
 					'colspan'=> 'all'
