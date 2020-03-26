@@ -48,8 +48,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'quantity_sim',
             //'type_sim',
 			'simtype.content_type_sim',
-			'sales_exp_sim',
-            'sales_act_sim',
+			'sales_exp_sim:thousandSeparator',
+            'sales_act_sim:thousandSeparator',
             //'service_data',
 			//******Data related fields:
 			[
@@ -67,8 +67,11 @@ $this->params['breadcrumbs'][] = $this->title;
 			//******Platform related fields:
 			[
 				'label'=>'Platform Info:',
-				'value'=>'',
-				'class'=>'text-white bg-orange'
+				//'value'=>'',
+				'captionOptions'=> [
+					'class'=>'text-white bg-orange',
+					'colspan'=> 'all'
+				]
 			],
 			'boolean_platform.content_type_boolean',
 			'sales_exp_platform',
