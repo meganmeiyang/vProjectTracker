@@ -178,7 +178,15 @@ class Project extends \yii\db\ActiveRecord
 			$model->created_on = date("Y-m-d H:i:s");    
 		}
 		//$newattributes = $this->getAttributes();
-		//$oldattributes = $this->_oldattributes;  
+		//$oldattributes = $this->_oldattributes; 
+		if($this->sales_exp_sim == null) $this->sales_exp_sim= 0;
+		if($this->sales_exp_data == null) $this->sales_exp_data= 0;
+		if($this->sales_exp_platform == null) $this->sales_exp_platform= 0;
+		if($this->sales_exp_software == null) $this->sales_exp_software= 0;
+		if($this->sales_act_sim == null) $this->sales_act_sim= 0;
+		if($this->sales_act_data == null) $this->sales_act_data= 0;
+		if($this->sales_act_platform == null) $this->sales_act_platform= 0;
+		if($this->sales_act_software == null) $this->sales_act_software= 0;		
 		$this->sales_total_exp = $this->sales_exp_sim + $this->sales_exp_data + $this->sales_exp_platform + $this->sales_exp_software;
 		$this->sales_total_act = $this->sales_act_sim + $this->sales_act_data + $this->sales_act_platform + $this->sales_act_software;	
 		$this->sales_weighed_total = $this->sales_total_act * $this.getProgressx()->value_progress;
