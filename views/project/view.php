@@ -53,8 +53,8 @@ $this->params['breadcrumbs'][] = $this->title;
             //'service_data',
 			//******Data related fields:
 			[
-				'label'=>'Has data?'
-				'value'=>'boolean_data.content_type_boolean',
+				'label'=>'Has data?',
+				'value'=>'boolean_data.content_type_boolean'
 			],
 			//'cycle_data',
 			'cycle.content_type_cycle',
