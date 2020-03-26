@@ -30,7 +30,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id_project',
-            'created_on',
+            'created_on:datetime',
             'created_by',
             'name_customer',
             //'role_customer',
@@ -62,35 +62,39 @@ $this->params['breadcrumbs'][] = $this->title;
             'sales_act_data',
 			
 			//******Platform related fields:
-			[
+			/*[
 				'label'=>'Platform Info:',
+				'value'=>'',
 				'class'=>'text-white bg-orange'
-			],
+			],*/
 			'boolean_platform',
 			'sales_exp_platform',
             'sales_act_platform',
             //'service_platform',
             //'service_software',
-						//******Platform related fields:
-			[
+			//******Platform related fields:
+			/*[
 				'label'=>'Software Info:',
+				'value'=>'',
 				'class'=>'text-white bg-orange'
-			],
+			],*/
 			'boolean_software',
 			'sales_exp_software',
             'sales_act_software',
-			[
+			/*[
 				'label'=>'Does software include eSIM app',
+				'value'=>'',
 				'value'=>'boolean_esim',
-			],
+			],*/
             'sales_exp_software',
             'sales_act_software',
 			
-			//*****sales summary
-			[
+			///////sales summary
+			/*[
 				'label'=>'Summary:',
+				'value'=>'',
 				'class'=>'text-white bg-orange'
-			],
+			],*/
 			'progressx.content_progress',
             'status.content_data_status',
             'sales_exp_total',
