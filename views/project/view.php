@@ -52,7 +52,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'sales_act_sim',
             //'service_data',
 			//******Data related fields:
-			'boolean_data',
+			'boolean_data.content_type_boolean',
 			//'cycle_data',
 			'cycle.content_type_cycle',
             'size_data',
@@ -67,7 +67,7 @@ $this->params['breadcrumbs'][] = $this->title;
 				'value'=>'',
 				'class'=>'text-white bg-orange'
 			],*/
-			'boolean_platform',
+			'boolean_platform.content_type_boolean',
 			'sales_exp_platform',
             'sales_act_platform',
             //'service_platform',
@@ -78,13 +78,13 @@ $this->params['breadcrumbs'][] = $this->title;
 				'value'=>'',
 				'class'=>'text-white bg-orange'
 			],*/
-			'boolean_software',
+			'boolean_software.content_type_boolean',
 			'sales_exp_software',
             'sales_act_software',
 			/*[
 				'label'=>'Does software include eSIM app',
-				'value'=>'',
-				'value'=>'boolean_esim',
+				'value'=>'boolean_esim.content_type_boolean',
+				
 			],*/
             'sales_exp_software',
             'sales_act_software',
