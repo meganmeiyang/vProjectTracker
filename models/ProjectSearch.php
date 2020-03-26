@@ -20,7 +20,9 @@ class ProjectSearch extends Project
 			'status.content_data_status',
 			'industry.content_industry',
 			'sellmodel.content_selling_model',
-			'booleanvalue.content_type_boolean',
+			'boolean_data.content_type_boolean',
+			'boolean_platform.content_type_boolean',
+			'boolean_software.content_type_boolean',
 			'cycle.content_type_cycle',
 			'simtype.content_type_sim'
 				
@@ -110,10 +112,20 @@ class ProjectSearch extends Project
 			'asc' => ['sellmodel.content_selling_model' => SORT_ASC],
 			'desc' => ['sellmodel.content_selling_model' => SORT_DESC],
 		];
-		$query->joinWith('booleanvalue AS booleanvalue');
-		$dataProvider->sort->attributes['booleanvalue.content_type_boolean']=[
-			'asc' => ['booleanvalue.content_type_boolean' => SORT_ASC],
-			'desc' => ['booleanvalue.content_type_boolean' => SORT_DESC],
+		$query->joinWith('boolean_data AS boolean_data');
+		$dataProvider->sort->attributes['boolean_data.content_type_boolean']=[
+			'asc' => ['boolean_data.content_type_boolean' => SORT_ASC],
+			'desc' => ['boolea_data.content_type_boolean' => SORT_DESC],
+		];
+		$query->joinWith('boolean_software AS boolean_software');
+		$dataProvider->sort->attributes['boolean_software.content_type_boolean']=[
+			'asc' => ['boolean_software.content_type_boolean' => SORT_ASC],
+			'desc' => ['boolea_software.content_type_boolean' => SORT_DESC],
+		];
+		$query->joinWith('boolean_platform AS boolean_platform');
+		$dataProvider->sort->attributes['boolean_platform.content_type_boolean']=[
+			'asc' => ['boolean_platform.content_type_boolean' => SORT_ASC],
+			'desc' => ['boolea_platform.content_type_boolean' => SORT_DESC],
 		];
 		$query->joinWith('cycle AS cycle');
 		$dataProvider->sort->attributes['cycle.content_type_cycle']=[
@@ -176,7 +188,9 @@ class ProjectSearch extends Project
 			->andFilterWhere(['like', 'status.content_data_status', $this->getAttribute('status.content_data_status')])
 			->andFilterWhere(['like', 'industry.content_industry', $this->getAttribute('industry.content_industry')])	
 			->andFilterWhere(['like', 'sellmodel.content_selling_model', $this->getAttribute('sellmodel.content_selling_model')])
-			->andFilterWhere(['like', 'booleanvalue.content_type_boolean', $this->getAttribute('booleanvalue.content_type_boolean')])
+			->andFilterWhere(['like', 'boolean_data.content_type_boolean', $this->getAttribute('boolean_data.content_type_boolean')])
+			->andFilterWhere(['like', 'boolean_platform.content_type_boolean', $this->getAttribute('boolean_platform.content_type_boolean')])
+			->andFilterWhere(['like', 'boolean_software.content_type_boolean', $this->getAttribute('boolean_software.content_type_boolean')])
 			->andFilterWhere(['like', 'cycle.content_type_cycle', $this->getAttribute('cycle.content_type_cycle')])
 			->andFilterWhere(['like', 'simtype.content_type_sim', $this->getAttribute('simtype.content_type_sim')])	
 				

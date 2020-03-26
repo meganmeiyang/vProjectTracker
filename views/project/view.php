@@ -33,39 +33,74 @@ $this->params['breadcrumbs'][] = $this->title;
             'created_on',
             'created_by',
             'name_customer',
-            'role_customer',
-            'industry_customer',
+            //'role_customer',
+			'role.content_role',
+            //'industry_customer',
+			'industry.content_industry',
             'name_country',
             'text_requirements',
             'text_solutions',
+			'sellmodel.content_selling_model',
             'name_sales',
             'name_FAE',
             'name_PM',
+			//*****SIM related:
             'quantity_sim',
-            'type_sim',
-            'service_data',
-            'service_platform',
-            'service_software',
-            'cycle_data',
-            'size_data',
-            'sales_exp_data',
-            'sales_act_data',
-            'sales_exp_sim',
+            //'type_sim',
+			'simtype.content_type_sim',
+			'sales_exp_sim',
             'sales_act_sim',
-            'sales_exp_platform',
+            //'service_data',
+			//******Data related fields:
+			'boolean_data',
+			//'cycle_data',
+			'cycle.content_type_cycle',
+            'size_data',
+			'name_supplier',
+            'coverage',
+			'sales_exp_data',
+            'sales_act_data',
+			
+			//******Platform related fields:
+			[
+				'label'=>'Platform Info:',
+				'class'=>'text-white bg-orange'
+			],
+			'boolean_platform',
+			'sales_exp_platform',
             'sales_act_platform',
+            //'service_platform',
+            //'service_software',
+						//******Platform related fields:
+			[
+				'label'=>'Software Info:',
+				'class'=>'text-white bg-orange'
+			],
+			'boolean_software',
+			'sales_exp_software',
+            'sales_act_software',
+			[
+				'label'=>'Does software include eSIM app',
+				'value'=>'boolean_esim',
+			],
             'sales_exp_software',
             'sales_act_software',
+			
+			//*****sales summary
+			[
+				'label'=>'Summary:',
+				'class'=>'text-white bg-orange'
+			],
+			'progressx.content_progress',
+            'status.content_data_status',
             'sales_exp_total',
             'sales_act_total',
             'sales_weighed_total',
-            'tag_eSIM',
-            'progress',
-            'statusy',
-            'name_operation',
-            'mode_selling',
-            'name_supplier',
-            'coverage',
+            //'tag_eSIM',
+
+            //'name_operation',
+            
+
         ],
     ]) ?>
 

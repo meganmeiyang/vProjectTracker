@@ -142,10 +142,22 @@ class Project extends \yii\db\ActiveRecord
 		return $this->hasOne(DataSellingModel::className(), ['iddata_selling_model'=>'mode_selling']);
 		
 	}
-	public function getBooleanvalue(){
+	public function getBoolean_data(){
 		return $this->hasOne(DataTypeBoolean::className(), ['iddata_type_boolean'=>'service_data']);
 		
 	}	
+	public function getBoolean_software(){
+		return $this->hasOne(DataTypeBoolean::className(), ['iddata_type_boolean'=>'service_software']);
+
+	}
+	public function getBoolean_platform(){
+		return $this->hasOne(DataTypeBoolean::className(), ['iddata_type_boolean'=>'service_platform']);
+
+	}
+	public function getBoolean_esim(){
+		return $this->hasOne(DataTypeBoolean::className(), ['iddata_type_boolean'=>'tag_eSIM']);
+
+	}
 	public function getCycle(){
 		return $this->hasOne(DataTypeCycle::className(), ['iddata_type_cycle'=>'cycle_data']);
 		
