@@ -52,7 +52,10 @@ $this->params['breadcrumbs'][] = $this->title;
             'sales_act_sim',
             //'service_data',
 			//******Data related fields:
-			'boolean_data.content_type_boolean',
+			[
+				'label'=>'Has data?'
+				'value'=>'boolean_data.content_type_boolean',
+			],
 			//'cycle_data',
 			'cycle.content_type_cycle',
             'size_data',
@@ -62,11 +65,11 @@ $this->params['breadcrumbs'][] = $this->title;
             'sales_act_data',
 			
 			//******Platform related fields:
-			/*[
+			[
 				'label'=>'Platform Info:',
 				'value'=>'',
 				'class'=>'text-white bg-orange'
-			],*/
+			],
 			'boolean_platform.content_type_boolean',
 			'sales_exp_platform',
             'sales_act_platform',
