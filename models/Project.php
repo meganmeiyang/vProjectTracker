@@ -189,7 +189,7 @@ class Project extends \yii\db\ActiveRecord
 		if($this->sales_act_software == null) $this->sales_act_software= 0;		
 		$this->sales_exp_total = $this->sales_exp_sim + $this->sales_exp_data + $this->sales_exp_platform + $this->sales_exp_software;
 		$this->sales_act_total = $this->sales_act_sim + $this->sales_act_data + $this->sales_act_platform + $this->sales_act_software;	
-		$this->sales_weighed_total = $this->sales_exp_total * (($this->getProgressx())->value_progress);
+		$this->sales_weighed_total = $this->sales_exp_total * (($this->getProgressx())->one()->value_progress);
 		return true;
     }	
 	
