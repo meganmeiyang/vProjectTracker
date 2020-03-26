@@ -54,7 +54,7 @@ $this->params['breadcrumbs'][] = $this->title;
 			//******Data related fields:
 			[
 				'label'=>'Has data?',
-				'value'=>'boolean_data.content_type_boolean'
+				'value'=>$model->boolean_data->content_type_boolean
 			],
 			//'cycle_data',
 			'cycle.content_type_cycle',
