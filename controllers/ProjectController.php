@@ -15,6 +15,8 @@ use yii\filters\AccessControl;
  */
 class ProjectController extends Controller
 {
+	
+	//public $boolvalue;
     /**
      * {@inheritdoc}
      */
@@ -66,8 +68,10 @@ class ProjectController extends Controller
      */
     public function actionView($id)
     {
-        return $this->render('view', [
+		$boolvalue = true;
+        return $this->render('update', [
             'model' => $this->findModel($id),
+			'boolvalue' => $boolvalue,
         ]);
     }
 
@@ -110,9 +114,10 @@ class ProjectController extends Controller
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id_project]);
         }
-
+		$boolvalue = false;
         return $this->render('update', [
             'model' => $model,
+			'boolvalue' => $boolvalue,
         ]);
     }
 

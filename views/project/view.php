@@ -48,8 +48,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'quantity_sim',
             //'type_sim',
 			'simtype.content_type_sim',
-			'sales_exp_sim:thousandSeparator',
-            'sales_act_sim:thousandSeparator',
+			'sales_exp_sim:currency',
+            'sales_act_sim:currency',
             //'service_data',
 			//******Data related fields:
 			[
@@ -61,39 +61,37 @@ $this->params['breadcrumbs'][] = $this->title;
             'size_data',
 			'name_supplier',
             'coverage',
-			'sales_exp_data',
-            'sales_act_data',
+			'sales_exp_data:currency',
+            'sales_act_data:currency',
 			
 			//******Platform related fields:
 			[
 				'label'=>'Platform Info:',
 				'value'=>'',
 				'captionOptions'=> [
-					'class'=>'text-white bg-orange',
+					'style'=>'text-white bg-orange',
 					'colspan'=> 'all'
 				]
 			],
 			'boolean_platform.content_type_boolean',
-			'sales_exp_platform',
-            'sales_act_platform',
+			'sales_exp_platform:currency',
+            'sales_act_platform:currency',
             //'service_platform',
             //'service_software',
 			//******Platform related fields:
-			/*[
+			[
 				'label'=>'Software Info:',
 				'value'=>'',
 				'class'=>'text-white bg-orange'
-			],*/
+			],
 			'boolean_software.content_type_boolean',
-			'sales_exp_software',
-            'sales_act_software',
-			/*[
+					
+			[
 				'label'=>'Does software include eSIM app',
-				'value'=>'boolean_esim.content_type_boolean',
-				
-			],*/
-            'sales_exp_software',
-            'sales_act_software',
+				'value'=>'boolean_esim.content_type_boolean'
+			],
+			'sales_exp_software:currency',
+			'sales_act_software:currency',
 			
 			///////sales summary
 			/*[
@@ -103,14 +101,12 @@ $this->params['breadcrumbs'][] = $this->title;
 			],*/
 			'progressx.content_progress',
             'status.content_data_status',
-            'sales_exp_total',
-            'sales_act_total',
-            'sales_weighed_total',
+            'sales_exp_total:currency',
+			'sales_act_total:currency',
+            'sales_weighed_total:currency',
             //'tag_eSIM',
-
             //'name_operation',
-            
-
+				
         ],
     ]) ?>
 

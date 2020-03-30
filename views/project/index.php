@@ -1,7 +1,8 @@
 <?php
 
 use yii\helpers\Html;
-use yii\grid\GridView;
+//use yii\grid\GridView;
+use kartik\grid\GridView;
 use yii\widgets\Pjax;
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\ProjectSearch */
@@ -22,8 +23,8 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
+        'dataProvider' => $dataProvider,		
+        'filterModel' => $searchModel,	
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
@@ -62,9 +63,23 @@ $this->params['breadcrumbs'][] = $this->title;
             //'sales_act_platform',
             //'sales_exp_software',
             //'sales_act_software',
-            'sales_exp_total',
-            'sales_act_total',
-            'sales_weighed_total',
+            
+			[
+				'attribute'=>'sales_exp_total',
+				'format'=>'currency',	
+				'pageSummary' => true,		
+			],
+			
+            [
+				'attribute'=>'sales_act_total',
+				'format'=>'currency',
+				'pageSummary' => true,
+			],
+            [
+				'attribute'=>'sales_weighed_total',
+				'format'=>'currency',
+				'pageSummary' => true,	
+			],
             //'tag_eSIM',
             //'progress',
             'progressx.content_progress',
@@ -74,10 +89,88 @@ $this->params['breadcrumbs'][] = $this->title;
             
 			//'name_operation',
             
+			[
+				'attribute'=>'weekly.item_week',
 				
-			
+			],	
+				
             ['class' => 'yii\grid\ActionColumn'],
-        ],
+			//check box	
+			[
+    			'class' => 'kartik\grid\CheckboxColumn',
+    			'headerOptions' => ['class' => 'kartik-sheet-style'],
+			],	
+				
+        ], 
+		//'tableOptions' =>['style' => 'width: 1800px;'],	
+			/*
+		'containerOptions' => ['style' => 'overflow: auto'], // only set when $responsive = false	
+		'exportConfig' => [
+    		GridView::CSV => ['label' => 'Save as CSV'],
+    		//GridView::HTML => [ html settings],
+    		GridView::PDF => [ 'label'=> 'Save as PDF'],
+		],
+		'headerRowOptions' => ['class' => 'kartik-sheet-style'],
+				'pjax' => true,		
+		'export' => [
+        	'fontAwesome' => true
+    	],	
+		'toolbar' =>  [
+        	['content'=>
+                Html::button('<i class="glyphicon glyphicon-plus"></i>', [
+                    'type'=>'button', 
+                    'title'=>'Add Book', 
+                    'class'=>'btn btn-success'
+                ]) . ' '.
+                Html::a('<i class="glyphicon glyphicon-repeat"></i>', ['grid-demo'], [
+                    'class' => 'btn btn-default', 
+                    'title' => 'Reset Grid'
+                ]),
+			],
+        	'{export}',
+        	'{toggleData}',
+		],	
+		*/
+	'containerOptions' => ['style' => 'overflow: auto'], // only set when $responsive = false
+    'headerRowOptions' => ['class' => 'kartik-sheet-style'],
+    'filterRowOptions' => ['class' => 'kartik-sheet-style'],
+    'pjax' => true, // pjax is set to always true for this demo
+    // set your toolbar
+    'toolbar' =>  [
+        /*['content' => 
+            Html::button('<i class="glyphicon glyphicon-plus"></i>', ['type' => 'button', 'title' => 'Add Book', 'class' => 'btn btn-success', 'onclick' => 'alert("This will launch the book creation form.\n\nDisabled for this demo!");']) . ' '.
+            Html::a('<i class="glyphicon glyphicon-repeat"></i>', ['grid-demo'], ['data-pjax' => 0, 'class' => 'btn btn-default', 'title' => 'Reset Grid'])
+        ],*/
+        '{export}',
+        '{toggleData}',
+    ],
+    // set export properties
+    'export' => [
+        'fontAwesome' => true,
+		//'label'=>'export',
+		'icon'=>'glyphicon glyphicon-download-alt',
+    ],
+    // parameters from the demo form
+    //'bordered' => true,
+    'striped' => true,
+    'condensed' => true,
+    'responsive' =>true,
+    'hover' => true,
+    'showPageSummary' => true,
+    'panel' => [
+        'type' => GridView::TYPE_DEFAULT,
+        'heading' => true,
+    ], 
+    'persistResize' => false,
+    'toggleDataOptions' => ['minCount' => 10],
+    'exportConfig' => [
+    		GridView::CSV => ['label' => 'Save as CSV'],
+    		//GridView::HTML => [ html settings],
+    		GridView::PDF => [ 'label'=> 'Save as PDF'],
+		],
+    'itemLabelSingle' => 'book',
+			'itemLabelPlural' => 'books',
+			
     ]); ?>
 
     <?php Pjax::end(); ?>

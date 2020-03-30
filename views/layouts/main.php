@@ -16,6 +16,7 @@ AppAsset::register($this);
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
 <head>
+	<script src="https://use.fontawesome.com/9c43870ba3.js"></script>
     <meta charset="<?= Yii::$app->charset ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -24,7 +25,7 @@ AppAsset::register($this);
     <?php $this->head() ?>
 		      <!--Import Google Icon Font-->
      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	  
+	
 	 
 
 </head>
@@ -63,12 +64,17 @@ AppAsset::register($this);
     NavBar::end();
     ?>
 
-    <div class="container">
-        <?= Breadcrumbs::widget([
-            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-        ]) ?>
-        <?= Alert::widget() ?>
-        <?= $content ?>
+	
+    <div class="container-fluid" style="padding-top: 70px">
+		<div class="row">
+			
+        		<?= Breadcrumbs::widget([
+            		'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+        			]) ?>
+
+					<?= $content ?>
+			
+		</div>
     </div>
 </div>
 

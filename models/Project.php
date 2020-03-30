@@ -119,6 +119,13 @@ class Project extends \yii\db\ActiveRecord
     {
         return $this->hasMany(Weekly::className(), ['id_toProject' => 'id_project']);
     }
+	
+	public function getWeekly(){
+		
+		$recent = $this->getWeeklies()->
+		
+		return $this->hasOne(Weekly::className(),['id_toProject'=>'id_project', 'date_modified'=>max(['date_modified'])]);
+	}
 
 	/**
 	* relation for role

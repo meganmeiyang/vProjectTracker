@@ -72,7 +72,7 @@ class User extends Component
      * @var bool whether to enable cookie-based login. Defaults to `false`.
      * Note that this property will be ignored if [[enableSession]] is `false`.
      */
-    public $enableAutoLogin = true;
+    public $enableAutoLogin = false;
     /**
      * @var bool whether to use session to persist authentication status across multiple requests.
      * You set this property to be `false` if your application is stateless, which is often the case

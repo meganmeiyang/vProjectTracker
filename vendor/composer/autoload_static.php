@@ -12,9 +12,9 @@ class ComposerStaticInitdf1940e6c32c5ec9d15ca5bd11572fa8
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
+        '2cffec82183ee1cea088009cef9a6fc3' => __DIR__ . '/..' . '/ezyang/htmlpurifier/library/HTMLPurifier.composer.php',
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
         '25072dd6e2470089de65ae7bf11d3109' => __DIR__ . '/..' . '/symfony/polyfill-php72/bootstrap.php',
-        '2cffec82183ee1cea088009cef9a6fc3' => __DIR__ . '/..' . '/ezyang/htmlpurifier/library/HTMLPurifier.composer.php',
         'f598d06aa772fa33d905e87be6398fb1' => __DIR__ . '/..' . '/symfony/polyfill-intl-idn/bootstrap.php',
         'def43f6c87e4f8dfd0c9e1b1bab14fe8' => __DIR__ . '/..' . '/symfony/polyfill-iconv/bootstrap.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
@@ -31,11 +31,45 @@ class ComposerStaticInitdf1940e6c32c5ec9d15ca5bd11572fa8
             'yii\\debug\\' => 10,
             'yii\\composer\\' => 13,
             'yii\\bootstrap\\' => 14,
+            'yii\\bootstrap4\\' => 15,
             'yii\\' => 4,
+        ),
+        's' => 
+        array (
+            'setasign\\Fpdi\\' => 14,
         ),
         'p' => 
         array (
             'phpDocumentor\\Reflection\\' => 25,
+        ),
+        'k' => 
+        array (
+            'kartik\\widgets\\' => 15,
+            'kartik\\typeahead\\' => 17,
+            'kartik\\touchspin\\' => 17,
+            'kartik\\time\\' => 12,
+            'kartik\\switchinput\\' => 19,
+            'kartik\\spinner\\' => 15,
+            'kartik\\sidenav\\' => 15,
+            'kartik\\select2\\' => 15,
+            'kartik\\rating\\' => 14,
+            'kartik\\range\\' => 13,
+            'kartik\\plugins\\fileinput\\' => 25,
+            'kartik\\plugins\\depdrop\\' => 23,
+            'kartik\\mpdf\\' => 12,
+            'kartik\\growl\\' => 13,
+            'kartik\\grid\\' => 12,
+            'kartik\\form\\' => 12,
+            'kartik\\file\\' => 12,
+            'kartik\\dialog\\' => 14,
+            'kartik\\depdrop\\' => 15,
+            'kartik\\datetime\\' => 16,
+            'kartik\\date\\' => 12,
+            'kartik\\color\\' => 13,
+            'kartik\\bs4dropdown\\' => 19,
+            'kartik\\base\\' => 12,
+            'kartik\\alert\\' => 13,
+            'kartik\\affix\\' => 13,
         ),
         'c' => 
         array (
@@ -65,6 +99,7 @@ class ComposerStaticInitdf1940e6c32c5ec9d15ca5bd11572fa8
         ),
         'P' => 
         array (
+            'Psr\\Log\\' => 8,
             'Psr\\Http\\Message\\' => 17,
             'Psr\\EventDispatcher\\' => 20,
             'Psr\\Container\\' => 14,
@@ -73,6 +108,10 @@ class ComposerStaticInitdf1940e6c32c5ec9d15ca5bd11572fa8
         'O' => 
         array (
             'Opis\\Closure\\' => 13,
+        ),
+        'M' => 
+        array (
+            'Mpdf\\' => 5,
         ),
         'G' => 
         array (
@@ -125,15 +164,127 @@ class ComposerStaticInitdf1940e6c32c5ec9d15ca5bd11572fa8
         array (
             0 => __DIR__ . '/..' . '/yiisoft/yii2-bootstrap/src',
         ),
+        'yii\\bootstrap4\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/yiisoft/yii2-bootstrap4/src',
+        ),
         'yii\\' => 
         array (
             0 => __DIR__ . '/..' . '/yiisoft/yii2',
+        ),
+        'setasign\\Fpdi\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/setasign/fpdi/src',
         ),
         'phpDocumentor\\Reflection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
             1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
             2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+        ),
+        'kartik\\widgets\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widgets/src',
+        ),
+        'kartik\\typeahead\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-typeahead/src',
+        ),
+        'kartik\\touchspin\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-touchspin/src',
+        ),
+        'kartik\\time\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-timepicker/src',
+        ),
+        'kartik\\switchinput\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-switchinput',
+        ),
+        'kartik\\spinner\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-spinner/src',
+        ),
+        'kartik\\sidenav\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-sidenav',
+        ),
+        'kartik\\select2\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-select2/src',
+        ),
+        'kartik\\rating\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-rating/src',
+        ),
+        'kartik\\range\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-rangeinput/src',
+        ),
+        'kartik\\plugins\\fileinput\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/bootstrap-fileinput',
+        ),
+        'kartik\\plugins\\depdrop\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/dependent-dropdown',
+        ),
+        'kartik\\mpdf\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-mpdf/src',
+        ),
+        'kartik\\growl\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-growl',
+        ),
+        'kartik\\grid\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-grid/src',
+        ),
+        'kartik\\form\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-activeform/src',
+        ),
+        'kartik\\file\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-fileinput/src',
+        ),
+        'kartik\\dialog\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-dialog/src',
+        ),
+        'kartik\\depdrop\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-depdrop/src',
+        ),
+        'kartik\\datetime\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-datetimepicker/src',
+        ),
+        'kartik\\date\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-datepicker/src',
+        ),
+        'kartik\\color\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-colorinput/src',
+        ),
+        'kartik\\bs4dropdown\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-bootstrap4-dropdown/src',
+        ),
+        'kartik\\base\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-krajee-base/src',
+        ),
+        'kartik\\alert\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-alert',
+        ),
+        'kartik\\affix\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-affix',
         ),
         'cebe\\markdown\\' => 
         array (
@@ -203,6 +354,10 @@ class ComposerStaticInitdf1940e6c32c5ec9d15ca5bd11572fa8
         array (
             0 => __DIR__ . '/..' . '/symfony/browser-kit',
         ),
+        'Psr\\Log\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
+        ),
         'Psr\\Http\\Message\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/http-message/src',
@@ -222,6 +377,10 @@ class ComposerStaticInitdf1940e6c32c5ec9d15ca5bd11572fa8
         'Opis\\Closure\\' => 
         array (
             0 => __DIR__ . '/..' . '/opis/closure/src',
+        ),
+        'Mpdf\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/mpdf/mpdf/src',
         ),
         'GuzzleHttp\\Psr7\\' => 
         array (

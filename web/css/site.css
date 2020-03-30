@@ -96,11 +96,11 @@ a.desc:after {
     border: none;
 }
 
-@media(max-width:767px) {
+@media(max-width:1024px) {
     .nav li > form > button.logout {
         display:block;
         text-align: left;
-        width: 100%;
+        width: 150%;
         padding: 10px 15px;
     }
 }
