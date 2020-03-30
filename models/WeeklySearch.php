@@ -17,8 +17,8 @@ class WeeklySearch extends Weekly
     public function rules()
     {
         return [
-            [['id_week', 'id_toProject'], 'integer'],
-            [['name_submitter', 'date_submitted', 'num_week', 'action', 'name_at', 'date_check', 'date_modified'], 'safe'],
+            [['id_week', 'id_toProject', 'num_week'], 'integer'],
+            [['name_submitter', 'date_submitted', 'action', 'name_at', 'date_check', 'date_modified', 'name_modifiedBy', 'item_week'], 'safe'],
         ];
     }
 
@@ -61,14 +61,16 @@ class WeeklySearch extends Weekly
             'id_week' => $this->id_week,
             'date_submitted' => $this->date_submitted,
             'id_toProject' => $this->id_toProject,
+            'num_week' => $this->num_week,
             'date_check' => $this->date_check,
             'date_modified' => $this->date_modified,
         ]);
 
         $query->andFilterWhere(['like', 'name_submitter', $this->name_submitter])
-            ->andFilterWhere(['like', 'num_week', $this->num_week])
             ->andFilterWhere(['like', 'action', $this->action])
-            ->andFilterWhere(['like', 'name_at', $this->name_at]);
+            ->andFilterWhere(['like', 'name_at', $this->name_at])
+            ->andFilterWhere(['like', 'name_modifiedBy', $this->name_modifiedBy])
+            ->andFilterWhere(['like', 'item_week', $this->item_week]);
 
         return $dataProvider;
     }

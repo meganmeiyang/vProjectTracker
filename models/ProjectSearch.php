@@ -24,8 +24,8 @@ class ProjectSearch extends Project
 			'boolean_platform.content_type_boolean',
 			'boolean_software.content_type_boolean',
 			'cycle.content_type_cycle',
-			'simtype.content_type_sim'
-				
+			'simtype.content_type_sim',
+			'weekx.item_week',	
 		]);
 		
 	}
@@ -46,7 +46,7 @@ class ProjectSearch extends Project
 				'booleanvalue.content_type_boolean',
 				'cycle.content_type_cycle',
 				'simtype.content_type_sim',
-					'created_by', 'name_customer', 'name_country', 'text_requirements', 'text_solutions', 'name_sales', 'name_FAE', 'name_PM', 'name_operation', 'name_supplier', 'coverage'], 'safe'],
+					'created_by', 'name_customer', 'name_country', 'text_requirements', 'text_solutions', 'name_sales', 'name_FAE', 'name_PM', 'name_operation', 'name_supplier', 'coverage','weekx.item_week'], 'safe'],
         ];
     }
 
@@ -137,7 +137,11 @@ class ProjectSearch extends Project
 			'asc' => ['simtype.content_type_sim' => SORT_ASC],
 			'desc' => ['simtype.content_type_sim' => SORT_DESC],
 		];			
-		
+		$query->joinWith('weekx AS weekx');
+		$dataProvider->sort->attributes['weekly.item_week']=[
+			'asc' => ['weekx.item_week' => SORT_ASC],
+			'desc' => ['weekx.item_week' => SORT_DESC],
+		];
 		//Yii::info($query->get(), __METHOD__);
 		//Yii::info($this->getAttribute('progressx.content_progress'), __METHOD__);
 		
@@ -193,7 +197,7 @@ class ProjectSearch extends Project
 			->andFilterWhere(['like', 'boolean_software.content_type_boolean', $this->getAttribute('boolean_software.content_type_boolean')])
 			->andFilterWhere(['like', 'cycle.content_type_cycle', $this->getAttribute('cycle.content_type_cycle')])
 			->andFilterWhere(['like', 'simtype.content_type_sim', $this->getAttribute('simtype.content_type_sim')])	
-				
+			->andFilterWhere(['like', 'weekx.item_week', $this->getAttribute('weekx.item_week')])		
 				;
 
         return $dataProvider;

@@ -38,6 +38,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'name_at',
             'date_check',
             'date_modified',
+            'name_modifiedBy',
+            'item_week',
         ],
     ]) ?>
 

@@ -90,7 +90,7 @@ $this->params['breadcrumbs'][] = $this->title;
 			//'name_operation',
             
 			[
-				'attribute'=>'weekly.item_week',
+				'attribute'=>'weekx.item_week',
 				
 			],	
 				

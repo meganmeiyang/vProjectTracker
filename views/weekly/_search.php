@@ -36,6 +36,10 @@ use yii\widgets\ActiveForm;
 
     <?php // echo $form->field($model, 'date_modified') ?>
 
+    <?php // echo $form->field($model, 'name_modifiedBy') ?>
+
+    <?php // echo $form->field($model, 'item_week') ?>
+
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>
         <?= Html::resetButton('Reset', ['class' => 'btn btn-outline-secondary']) ?>

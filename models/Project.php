@@ -120,11 +120,12 @@ class Project extends \yii\db\ActiveRecord
         return $this->hasMany(Weekly::className(), ['id_toProject' => 'id_project']);
     }
 	
-	public function getWeekly(){
+	public function getWeekx(){
 		
-		$recent = $this->getWeeklies()->
+		$weeklies = $this->getWeeklies();
+		$recent = $weeklies->andWhere(['date_modified'=> $weeklies->max('date_modified')]);
 		
-		return $this->hasOne(Weekly::className(),['id_toProject'=>'id_project', 'date_modified'=>max(['date_modified'])]);
+		return $recent;
 	}
 
 	/**

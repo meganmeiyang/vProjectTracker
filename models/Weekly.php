@@ -11,13 +11,13 @@ use Yii;
  * @property string|null $name_submitter
  * @property string|null $date_submitted
  * @property int|null $id_toProject
- * @property string $num_week
+ * @property int|null $num_week
  * @property string|null $action
  * @property string|null $name_at
  * @property string|null $date_check
  * @property string|null $date_modified
- *
- * @property Project $toProject
+ * @property string|null $name_modifiedBy
+ * @property string|null $item_week
  */
 class Weekly extends \yii\db\ActiveRecord
 {
@@ -35,13 +35,12 @@ class Weekly extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id_week', 'num_week', 'item_week'], 'required'],
-            [['id_week', 'id_toProject'], 'integer'],
+            [['id_week'], 'required'],
+            [['id_week', 'id_toProject', 'num_week'], 'integer'],
             [['date_submitted', 'date_check', 'date_modified'], 'safe'],
-            [['name_submitter', 'num_week', 'action', 'name_at','name_modifiedBy'], 'string', 'max' => 45],
-			[['item_week'], 'string', 'max'=>300],
+            [['name_submitter', 'action', 'name_at', 'name_modifiedBy'], 'string', 'max' => 45],
+            [['item_week'], 'string', 'max' => 300],
             [['id_week'], 'unique'],
-            [['id_toProject'], 'exist', 'skipOnError' => true, 'targetClass' => Project::className(), 'targetAttribute' => ['id_toProject' => 'id_project']],
         ];
     }
 
@@ -52,27 +51,17 @@ class Weekly extends \yii\db\ActiveRecord
     {
         return [
             'id_week' => 'Id Week',
-            'name_submitter' => 'Name Submitter',
-            'date_submitted' => 'Date Submitted',
-            'id_toProject' => 'Id To Project',
-            'num_week' => 'Num Week',
+            'name_submitter' => 'Submitted by',
+            'date_submitted' => 'Submitted on',
+            'id_toProject' => 'Project ID',
+            'num_week' => 'Nth Week',
             'action' => 'Action',
-            'name_at' => 'Name At',
+            'name_at' => 'At',
             'date_check' => 'Date Check',
-            'date_modified' => 'Date Modified',
-			'name_modifiedBy' =>'Modified By',
-			'item_week' => 'Week Updates',
+            'date_modified' => 'Modified on',
+            'name_modifiedBy' => 'Modified By',
+            'item_week' => 'Weekly Updates',
         ];
-    }
-
-    /**
-     * Gets query for [[ToProject]].
-     *
-     * @return \yii\db\ActiveQuery|ProjectQuery
-     */
-    public function getToProject()
-    {
-        return $this->hasOne(Project::className(), ['id_project' => 'id_toProject']);
     }
 
     /**

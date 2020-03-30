@@ -83,6 +83,7 @@ class ProjectController extends Controller
     public function actionCreate()
     {
         $model = new Project();
+		$boolvalue = false;
 
         if ($model->load(Yii::$app->request->post())) {
 			
@@ -97,6 +98,7 @@ class ProjectController extends Controller
 
         return $this->render('create', [
             'model' => $model,
+				'boolvalue' => $boolvalue,
         ]);
     }
 

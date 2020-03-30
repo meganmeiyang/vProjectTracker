@@ -65,7 +65,7 @@ AppAsset::register($this);
     ?>
 
 	
-    <div class="container-fluid" style="padding-top: 70px">
+    <div class="container-fluid" style="padding: 70px 30px">
 		<div class="row">
 			
         		<?= Breadcrumbs::widget([

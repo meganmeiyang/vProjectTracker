@@ -20,7 +20,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'id_toProject')->textInput() ?>
 
-    <?= $form->field($model, 'num_week')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'num_week')->textInput() ?>
 
     <?= $form->field($model, 'action')->textInput(['maxlength' => true]) ?>
 
@@ -29,6 +29,10 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'date_check')->textInput() ?>
 
     <?= $form->field($model, 'date_modified')->textInput() ?>
+
+    <?= $form->field($model, 'name_modifiedBy')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'item_week')->textInput(['maxlength' => true]) ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
