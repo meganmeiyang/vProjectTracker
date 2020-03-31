@@ -182,8 +182,8 @@ $this->params['breadcrumbs'][] = $this->title;
     		//GridView::HTML => [ html settings],
     		GridView::PDF => [ 'label'=> 'Save as PDF'],
 		],
-    'itemLabelSingle' => 'book',
-			'itemLabelPlural' => 'books',
+    //'itemLabelSingle' => 'book',
+			//'itemLabelPlural' => 'books',
 			
     ]); ?>
 
