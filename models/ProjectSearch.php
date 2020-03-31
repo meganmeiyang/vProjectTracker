@@ -138,7 +138,7 @@ class ProjectSearch extends Project
 			'desc' => ['simtype.content_type_sim' => SORT_DESC],
 		];			
 		$query->joinWith('weekx AS weekx');
-		$dataProvider->sort->attributes['weekly.item_week']=[
+		$dataProvider->sort->attributes['weekx.item_week']=[
 			'asc' => ['weekx.item_week' => SORT_ASC],
 			'desc' => ['weekx.item_week' => SORT_DESC],
 		];
