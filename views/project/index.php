@@ -54,7 +54,7 @@ $this->params['breadcrumbs'][] = $this->title;
 				'label'=>'Data requirements',
 				'attribute'=>'name_supplier',
 				'value' => function ($model, $key, $index, $widget) { 
-					return $model->size_data + " per "+$model->cycle->content_type_cycle + " "+ $model->coverage + " by " + $model-> name_supplier;
+					return (string)$model->size_data + " per "+$model->cycle->content_type_cycle + " "+ $model->coverage + " by " + $model-> name_supplier;
 				},
 				'filterType' => GridView::FILTER_SELECT2,
 				'filter' => ArrayHelper::map(Project::find()->orderBy('size_data')->asArray()->all(), 'coverage', 'name_supplier'), 
