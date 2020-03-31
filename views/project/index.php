@@ -5,6 +5,8 @@ use yii\helpers\Html;
 use kartik\grid\GridView;
 use yii\widgets\Pjax;
 use yii\helpers\ArrayHelper;
+use app\models\Project;
+
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\ProjectSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -55,7 +57,7 @@ $this->params['breadcrumbs'][] = $this->title;
 					return $model->size_data + " per "+$model->cycle->content_type_cycle + " "+ $model->coverage + " by " + $model-> name_supplier;
 				},
 				'filterType' => GridView::FILTER_SELECT2,
-				'filter' => ArrayHelper::map($model->find()->orderBy('size_data')->asArray()->all(), 'coverage', 'name_supplier'), 
+				'filter' => ArrayHelper::map(Project::find()->orderBy('size_data')->asArray()->all(), 'coverage', 'name_supplier'), 
 			],
 			//'service_data',
 			
