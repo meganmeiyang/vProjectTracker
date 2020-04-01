@@ -194,7 +194,11 @@ class Project extends \yii\db\ActiveRecord
 	
 		if($insert) 
 		{
-			$model->created_by = Yii::$app->user->identity->username;
+			$user = Yii::$app->user;
+			$identity = $user->identity;
+			$username = $identity->username;
+			
+			$model->created_by = $username;
 			$model->created_on = date("Y-m-d H:i:s");    
 		}
 		//$newattributes = $this->getAttributes();
