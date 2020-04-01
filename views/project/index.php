@@ -31,7 +31,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id_project',
+            //'id_project',
             //'created_on',
             //'created_by',
 			'name_country',
@@ -40,6 +40,7 @@ $this->params['breadcrumbs'][] = $this->title;
 			'role.content_role',
             //'industry_customer',
             'application',
+			'name_sales',
             //'text_requirements',
             //'text_solutions',
 			//'mode_selling',
@@ -108,7 +109,7 @@ $this->params['breadcrumbs'][] = $this->title;
 					]);		
 				},
 				
-			],*/	
+			],*/	
 			//'statusy',
             
 			//'name_operation',
@@ -176,7 +177,7 @@ $this->params['breadcrumbs'][] = $this->title;
     ],
     // parameters from the demo form
     //'bordered' => true,
-    'striped' => true,
+    'striped' => false,
     'condensed' => true,
     'responsive' =>true,
     'hover' => true,

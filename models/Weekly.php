@@ -57,7 +57,7 @@ class Weekly extends \yii\db\ActiveRecord
             'num_week' => 'Nth Week',
             'action' => 'Action',
             'name_at' => 'At',
-            'date_check' => 'Date Check',
+            'date_check' => 'Date to check',
             'date_modified' => 'Modified on',
             'name_modifiedBy' => 'Modified By',
             'item_week' => 'Weekly Updates',
@@ -72,4 +72,31 @@ class Weekly extends \yii\db\ActiveRecord
     {
         return new WeeklyQuery(get_called_class());
     }
+	n
+	public function beforeSave($insert)
+    {
+        if (!parent::beforeSave($insert)) {
+            return false;
+		}
+
+        // ...custom code here...
+		$user = Yii::$app->user;
+		$identity = $user->identity;
+		$username = $identity->username;
+		if($username ==null || $username=="") $username='Admin*';
+		$time = date("Y-m-d H:i:s");
+		if($insert) 
+		{
+			
+			$this->name_submitter = $username;
+			$this->date_submitted = $time  
+		}
+		else{
+			$this->name_modifiedBy = $username;
+			$this->date_modified = $time;    
+		}
+		
+		return true;
+    }	
+	
 }
