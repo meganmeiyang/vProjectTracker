@@ -197,9 +197,9 @@ class Project extends \yii\db\ActiveRecord
 			$user = Yii::$app->user;
 			$identity = $user->identity;
 			$username = $identity->username;
-			if($username ==null) $username='admin';
-			$model->created_by = $username;
-			$model->created_on = date("Y-m-d H:i:s");    
+			if($username ==null || $username=="") $username='admin';
+			$this->created_by = $username;
+			$this->created_on = date("Y-m-d H:i:s");    
 		}
 		//$newattributes = $this->getAttributes();
 		//$oldattributes = $this->_oldattributes; 
