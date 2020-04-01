@@ -72,7 +72,7 @@ class Weekly extends \yii\db\ActiveRecord
     {
         return new WeeklyQuery(get_called_class());
     }
-	n
+	
 	public function beforeSave($insert)
     {
         if (!parent::beforeSave($insert)) {
@@ -89,7 +89,7 @@ class Weekly extends \yii\db\ActiveRecord
 		{
 			
 			$this->name_submitter = $username;
-			$this->date_submitted = $time  
+			$this->date_submitted = $time;
 		}
 		else{
 			$this->name_modifiedBy = $username;
