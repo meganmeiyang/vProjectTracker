@@ -46,7 +46,7 @@ class ProjectSearch extends Project
 				'booleanvalue.content_type_boolean',
 				'cycle.content_type_cycle',
 				'simtype.content_type_sim',
-					'created_by', 'name_customer', 'name_country', 'text_requirements', 'text_solutions', 'name_sales', 'name_FAE', 'name_PM', 'name_operation', 'name_supplier', 'coverage','weekx.item_week'], 'safe'],
+					'created_by', 'name_customer', 'name_country', 'text_requirements', 'text_solutions', 'name_sales', 'name_FAE', 'name_PM', 'name_operation', 'name_supplier', 'coverage','weekx.item_week','application'], 'safe'],
         ];
     }
 
@@ -187,6 +187,7 @@ class ProjectSearch extends Project
             ->andFilterWhere(['like', 'name_operation', $this->name_operation])
             ->andFilterWhere(['like', 'name_supplier', $this->name_supplier])
             ->andFilterWhere(['like', 'coverage', $this->coverage])
+			->andFilterWhere(['like', 'application', $this->application])
 			->andFilterWhere(['like', 'role.content_role', $this->getAttribute('role.content_role')])
 			->andFilterWhere(['like', 'progressx.content_progress', $this->getAttribute('progressx.content_progress')])
 			->andFilterWhere(['like', 'status.content_data_status', $this->getAttribute('status.content_data_status')])

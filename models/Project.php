@@ -57,7 +57,7 @@ class Project extends \yii\db\ActiveRecord
             [['created_on', 'Role.content_role', 'exp_mp_date'], 'safe'],
             [['name_customer', 'name_country'], 'required'],
             [['quantity_sim', 'type_sim', 'service_data', 'service_platform', 'service_software', 'cycle_data', 'size_data', 'sales_exp_data', 'sales_exp_sim', 'sales_exp_platform', 'sales_exp_software', 'sales_act_data','sales_act_sim','sales_act_platform','sales_act_platform','tag_eSIM', 'progress', 'statusy', 'mode_selling', 'industry_customer', 'role_customer'], 'integer'],
-            [['created_by', 'name_customer', 'name_country', 'name_sales', 'name_FAE', 'name_PM', 'name_operation','name_supplier','coverage'], 'string', 'max' => 45],
+            [['created_by', 'name_customer', 'name_country', 'name_sales', 'name_FAE', 'name_PM', 'name_operation','name_supplier','coverage', 'application'], 'string', 'max' => 45],
 			[['exp_mp_date'], 'string', 'max' => 8],
             [['text_requirements', 'text_solutions'], 'string', 'max' => 150],
         ];
@@ -97,16 +97,16 @@ class Project extends \yii\db\ActiveRecord
             'tag_eSIM' => 'isESIM',
             'progress' => 'Progress',
             'statusy' => 'Status',
-            'name_operation' => 'Operator',
+            'name_operation' => 'Handled By',
             'mode_selling' => 'Mode Selling',
             'industry_customer' => 'Industry Customer',
             'role_customer' => 'Customer Role',
-			'sales_weighed_total' => 'Weighed Sales',
+			'sales_weighed_total' => 'Weighed Projected Sales',
 			'name_supplier' => 'Supplier',
-			'exp_mp_date' => 'Exp MP Date',
-			'sales_exp_total' => 'Exp total sales',
-			'sales_act_total' => 'Actual total sales',
-				
+			'exp_mp_date' => 'Projected MP Date',
+			'sales_exp_total' => 'Total Projected Sales',
+			'sales_act_total' => 'Total Actual Sales',
+			'application'=>'Application',	
         ];
     }
 

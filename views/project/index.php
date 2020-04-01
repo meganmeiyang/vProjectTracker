@@ -6,7 +6,7 @@ use kartik\grid\GridView;
 use yii\widgets\Pjax;
 use yii\helpers\ArrayHelper;
 use app\models\Project;
-
+use yii\bootstrap\Progress;
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\ProjectSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -55,7 +55,7 @@ $this->params['breadcrumbs'][] = $this->title;
 				'attribute'=>'name_supplier',
 				'value' => function ($model, $key, $index, $widget) { 
 					//return (string)$model->size_data + " per "+$model->cycle->content_type_cycle + " "+ $model->coverage + " by " + $model-> name_supplier;
-					return ArrayHelper::map(Project::find()->asArray()->all(), 'size_data', 'cycle.content_type_cycle', 'coverage', 'name_supplier');
+					return $model->size_data . "MB/" . $model->cycle->content_type_cycle. " in ".$model->coverage." by ".$model->name_supplier;//'size_data', 'cycle.content_type_cycle', 'coverage', 'name_supplier');
 				},
 				'filterType' => GridView::FILTER_SELECT2,
 				'filter' => ArrayHelper::map(Project::find()->orderBy('size_data')->asArray()->all(), 'coverage', 'name_supplier'), 
@@ -65,10 +65,10 @@ $this->params['breadcrumbs'][] = $this->title;
             //'service_platform',
             //'service_software',
             //'cycle_data',
-            'cycle.content_type_cycle',
-			'size_data',
-			'name_supplier',
-            'coverage',
+            //'cycle.content_type_cycle',
+			//'size_data',
+			//'name_supplier',
+            //'coverage',
             //'sales_exp_data',
             //'sales_act_data',
             //'sales_exp_sim',
@@ -83,22 +83,32 @@ $this->params['breadcrumbs'][] = $this->title;
 				'format'=>'currency',	
 				'pageSummary' => true,		
 			],
-			
+			[
+				'attribute'=>'sales_weighed_total',
+				'format'=>'currency',
+				'pageSummary' => true,	
+			],
             [
 				'attribute'=>'sales_act_total',
 				'format'=>'currency',
 				'pageSummary' => true,
 			],
-            [
-				'attribute'=>'sales_weighed_total',
-				'format'=>'currency',
-				'pageSummary' => true,	
-			],
+			'exp_mp_date',	
             //'tag_eSIM',
             //'progress',
             'progressx.content_progress',
 			'status.content_data_status',
-			'exp_mp_date',	
+			/*[
+				
+				'label'=>'Progress',
+				'value'=> function($model, $key, $index, $widget){
+					return Progress::widget([
+    				'percent' => $model->progressx->value_progress * 100,
+					'barOptions' => ['class' => 'progress-bar-success'],
+					]);		
+				},
+				
+			],*/	
 			//'statusy',
             
 			//'name_operation',
