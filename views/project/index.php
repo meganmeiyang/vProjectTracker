@@ -49,7 +49,10 @@ $this->params['breadcrumbs'][] = $this->title;
             //'name_FAE',
             //'name_PM',
 			'simtype.content_type_sim',
-            'quantity_sim',
+            [
+				'attribute'=>'quantity_sim',
+				'format'=> 'decimal',
+			],
             //'type_sim',
             [
 				'label'=>'Data requirements',

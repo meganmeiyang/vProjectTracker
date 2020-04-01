@@ -55,6 +55,12 @@ $config = [
 			],
 		],
 		*/
+		'formatter' => [
+            'dateFormat' => 'dd.MM.yyyy',
+            'decimalSeparator' => '.',
+            'thousandSeparator' => ',',
+            'currencyCode' => 'USD',
+		],
         /*
         'urlManager' => [
             'enablePrettyUrl' => true,
