@@ -31,13 +31,21 @@ $this->params['breadcrumbs'][] = $this->title;
             'name_submitter',
             'date_submitted',
             'id_toProject',
+			[
+				'attribute'=>'project.name_customer',	
+				'value'=>function($model, $key, $index, $widget){
+					return Html::a($model->project->name_customer,['project/view', 'id'=>$model->id_toProject]);
+				},
+				'format'=>'raw',
+			],
             'num_week',
-            //'action',
-            //'name_at',
+			'item_week',
+            'action',
+            'name_at',
             //'date_check',
             //'date_modified',
             //'name_modifiedBy',
-            //'item_week',
+            
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

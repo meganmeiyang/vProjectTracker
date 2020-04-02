@@ -69,7 +69,14 @@ class WeeklySearch extends Weekly
             // $query->where('0=1');
             return $dataProvider;
         }
-
+		
+		$query->joinWith('project AS project');
+		$dataProvider->sort->attributes['project.name_customer']=[
+			'asc' => ['project.name_customer' => SORT_ASC],
+			'desc' => ['project.name_customer' => SORT_DESC],
+		];
+		
+		
         // grid filtering conditions
         $query->andFilterWhere([
             'id_week' => $this->id_week,
@@ -84,8 +91,8 @@ class WeeklySearch extends Weekly
             ->andFilterWhere(['like', 'action', $this->action])
             ->andFilterWhere(['like', 'name_at', $this->name_at])
             ->andFilterWhere(['like', 'name_modifiedBy', $this->name_modifiedBy])
-            ->andFilterWhere(['like', 'item_week', $this->item_week]);
-
+            ->andFilterWhere(['like', 'item_week', $this->item_week])
+			->andFilterWhere(['like', 'project.name_customer', $this->getAttribute('project.name_customer')]);
         return $dataProvider;
     }
 }
