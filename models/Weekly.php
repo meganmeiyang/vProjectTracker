@@ -38,7 +38,8 @@ class Weekly extends \yii\db\ActiveRecord
             [['id_toProject', 'num_week'], 'required'],
             [['id_toProject', 'num_week'], 'integer'],
             [['date_submitted', 'date_check', 'date_modified'], 'safe'],
-            [['name_submitter', 'action', 'name_at', 'name_modifiedBy'], 'string', 'max' => 45],
+            [['name_submitter', 'name_at', 'name_modifiedBy'], 'string', 'max' => 45],
+			[['action'], 'string','max' => 150],
             [['item_week'], 'string', 'max' => 300],
             [['id_week'], 'unique'],
         ];
