@@ -62,6 +62,7 @@ class Weekly extends \yii\db\ActiveRecord
             'date_modified' => 'Modified on',
             'name_modifiedBy' => 'Modified By',
             'item_week' => 'Weekly Updates',
+			'project.name_customer' =>'Customer',
         ];
     }
 

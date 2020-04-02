@@ -19,14 +19,15 @@ use app\models\Project;
 	
 
     <?= $form->field($model, 'id_toProject')->widget(Select2::classname(),[
-		'data' => ArrayHelper::map(Project::find()->all(),'id_project','name_customer'), 
-		'options' => ['placeholder' => 'Select a state ...'],
+		'data' => ArrayHelper::map(Project::find()->all(),'id_project','application','name_customer'), 
+		'options' => ['placeholder' => 'Select a customer ...'],
     	'pluginOptions' => [
         	'allowClear' => true
     	],
 		
 		]) 
 	?>
+			
 
     <?= $form->field($model, 'num_week')->textInput()->hint('current week is '.date('W')) ?>
 
