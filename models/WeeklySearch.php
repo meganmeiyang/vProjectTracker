@@ -11,14 +11,28 @@ use app\models\Weekly;
  */
 class WeeklySearch extends Weekly
 {
+	
+	
+	public function attributes(){
+		return array_merge(parent::attributes(), [
+			
+			'project.name_customer',
+		]);
+		
+	}
+	
+	
     /**
      * {@inheritdoc}
      */
     public function rules()
     {
         return [
+			
             [['id_toProject', 'num_week'], 'integer'],
-            [['name_submitter', 'date_submitted', 'action', 'name_at', 'date_check', 'date_modified', 'name_modifiedBy', 'item_week'], 'safe'],
+            [['name_submitter', 'date_submitted', 'action', 'name_at', 'date_check', 'date_modified', 'name_modifiedBy', 'item_week','project.name_customer'
+				
+				], 'safe'],
         ];
     }
 

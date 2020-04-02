@@ -35,7 +35,7 @@ class Weekly extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            
+            [['id_toProject', 'num_week'], 'required'],
             [['id_toProject', 'num_week'], 'integer'],
             [['date_submitted', 'date_check', 'date_modified'], 'safe'],
             [['name_submitter', 'action', 'name_at', 'name_modifiedBy'], 'string', 'max' => 45],
@@ -53,7 +53,7 @@ class Weekly extends \yii\db\ActiveRecord
             'id_week' => 'Id Week',
             'name_submitter' => 'Submitted by',
             'date_submitted' => 'Submitted on',
-            'id_toProject' => 'Project ID',
+            'id_toProject' => 'Project',
             'num_week' => 'Nth Week',
             'action' => 'Action',
             'name_at' => 'At',

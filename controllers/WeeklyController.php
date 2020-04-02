@@ -62,9 +62,13 @@ class WeeklyController extends Controller
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
-    public function actionCreate()
+    public function actionCreate($id=0)
     {
+		
         $model = new Weekly();
+		if($id!=null && $id!=0){
+			$model->id_toProject = $id;
+		}
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
 			yii::debug("hereis model id".$model->id_week);
@@ -72,7 +76,7 @@ class WeeklyController extends Controller
         }
 
         return $this->render('create', [
-            'model' => $model,
+            'model' => $model
         ]);
     }
 

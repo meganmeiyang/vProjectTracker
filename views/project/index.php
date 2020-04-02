@@ -126,9 +126,9 @@ $this->params['breadcrumbs'][] = $this->title;
 				//'attribute'=>'weekx.item_week', //weekly updates
 				'value'=> function($model, $key, $index, $widget){
 					$week = Weekly::find()->where(['id_toProject'=>$model->id_project])->orderBy(['date_modified'=>SORT_DESC])->one();
-					if($week==null){'No update, Create one?'
-						return Html::a(,
-							['weekly/create','id'=>$week->id_week]);
+					if($week==null){
+						return Html::a('No update, Create one?',
+							['weekly/create', 'id'=>$model->id_project]);
 					}
 					else{
 						$content=$week->item_week;

@@ -3,6 +3,10 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use kartik\widgets\DatePicker;
+use kartik\select2\Select2;
+use yii\helpers\ArrayHelper;
+use app\models\Project;
+
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Weekly */
@@ -14,9 +18,17 @@ use kartik\widgets\DatePicker;
     <?php $form = ActiveForm::begin(); ?>
 	
 
-    <?= $form->field($model, 'id_toProject')->textInput() ?>
+    <?= $form->field($model, 'id_toProject')->widget(Select2::classname(),[
+		'data' => ArrayHelper::map(Project::find()->all(),'id_project','name_customer'), 
+		'options' => ['placeholder' => 'Select a state ...'],
+    	'pluginOptions' => [
+        	'allowClear' => true
+    	],
+		
+		]) 
+	?>
 
-    <?= $form->field($model, 'num_week')->textInput() ?>
+    <?= $form->field($model, 'num_week')->textInput()->hint('current week is '.date('W')) ?>
 
     <?= $form->field($model, 'action')->textInput(['maxlength' => true]) ?>
 
