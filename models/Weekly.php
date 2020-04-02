@@ -73,6 +73,11 @@ class Weekly extends \yii\db\ActiveRecord
         return new WeeklyQuery(get_called_class());
     }
 	
+	public function getProject(){
+		
+		return $this->hasOne(Project::className(), ['id_project'=>'id_toProject']);
+	}
+	
 	public function beforeSave($insert)
     {
         if (!parent::beforeSave($insert)) {
@@ -87,9 +92,11 @@ class Weekly extends \yii\db\ActiveRecord
 		$time = date("Y-m-d H:i:s");
 		if($insert) 
 		{
-			
+			//considered both created and modified -> for sorting purposes	
 			$this->name_submitter = $username;
 			$this->date_submitted = $time;
+			$this->name_modifiedBy = $username;
+			$this->date_modified = $time; 
 		}
 		else{
 			$this->name_modifiedBy = $username;

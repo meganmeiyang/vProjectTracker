@@ -6,7 +6,9 @@ use kartik\grid\GridView;
 use yii\widgets\Pjax;
 use yii\helpers\ArrayHelper;
 use app\models\Project;
+use app\models\Weekly;
 use yii\bootstrap\Progress;
+use yii\helpers\Url;
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\ProjectSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -116,11 +118,34 @@ $this->params['breadcrumbs'][] = $this->title;
 			//'statusy',
             
 			//'name_operation',
-            
+            //week
 			[
-				'attribute'=>'weekx.item_week',
-				
-			],	
+				'label'=> 'Weekly Updates',
+				//'filter'=>ArrayHelper::map(Weekly::find()->orderBy('date_modified')->asArray()->all(), 'id_week', 'item_week'),
+				//'attribute'=> Project::find()=>where(['id'=>])
+				//'attribute'=>'weekx.item_week', //weekly updates
+				'value'=> function($model, $key, $index, $widget){
+					$week = Weekly::find()->where(['id_toProject'=>$model->id_project])->orderBy(['date_modified'=>SORT_DESC])->one();
+					if($week==null){
+						return "NA";
+					}
+					else{
+						$content=$week->item_week;
+						return Html::a($content,
+							['weekly/view','id'=>$week->id_week]);
+						//['title'=>'view']
+						//);
+					}
+					
+				},
+				'format'=>'raw',
+				//'attribute'=>'weeklies.item_week',
+				/*'value' => function ($model, $key, $index, $widget) { 
+					//$url = Url::to(['weekly/view', 'id' => ]);
+        			return Html::a($model->weekx->item_week,  
+            		['weekly/view','id'=>$model->weekx->id_week]); 
+				}, */ 
+			],
 				
             ['class' => 'yii\grid\ActionColumn'],
 			//check box	
