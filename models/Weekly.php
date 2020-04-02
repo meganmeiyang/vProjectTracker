@@ -35,8 +35,8 @@ class Weekly extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id_week'], 'required'],
-            [['id_week', 'id_toProject', 'num_week'], 'integer'],
+            
+            [['id_toProject', 'num_week'], 'integer'],
             [['date_submitted', 'date_check', 'date_modified'], 'safe'],
             [['name_submitter', 'action', 'name_at', 'name_modifiedBy'], 'string', 'max' => 45],
             [['item_week'], 'string', 'max' => 300],

@@ -67,6 +67,7 @@ class WeeklyController extends Controller
         $model = new Weekly();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+			yii::debug("hereis model id".$model->id_week);
             return $this->redirect(['view', 'id' => $model->id_week]);
         }
 

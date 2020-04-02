@@ -17,7 +17,7 @@ class WeeklySearch extends Weekly
     public function rules()
     {
         return [
-            [['id_week', 'id_toProject', 'num_week'], 'integer'],
+            [['id_toProject', 'num_week'], 'integer'],
             [['name_submitter', 'date_submitted', 'action', 'name_at', 'date_check', 'date_modified', 'name_modifiedBy', 'item_week'], 'safe'],
         ];
     }
