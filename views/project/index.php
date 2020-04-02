@@ -60,8 +60,11 @@ $this->params['breadcrumbs'][] = $this->title;
 				'label'=>'Data requirements',
 				'attribute'=>'name_supplier',
 				'value' => function ($model, $key, $index, $widget) { 
+					if($model->service_data == 2){//No
+						return "N.A";
+					}
 					//return (string)$model->size_data + " per "+$model->cycle->content_type_cycle + " "+ $model->coverage + " by " + $model-> name_supplier;
-					return $model->size_data . "MB/" . $model->cycle->content_type_cycle. " in ".$model->coverage." by ".$model->name_supplier;//'size_data', 'cycle.content_type_cycle', 'coverage', 'name_supplier');
+					return $model->size_data. "MB/" . $model->cycle->content_type_cycle. " in ".$model->coverage." by ".$model->name_supplier;//'size_data', 'cycle.content_type_cycle', 'coverage', 'name_supplier');
 				},
 				//'filterType' => GridView::FILTER_SELECT2,
 				//'filter' => ArrayHelper::map(Project::find()->orderBy('size_data')->asArray()->all(), 'coverage', 'name_supplier'), 
