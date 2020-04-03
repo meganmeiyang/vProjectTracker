@@ -150,6 +150,20 @@ $this->params['breadcrumbs'][] = $this->title;
             		['weekly/view','id'=>$model->weekx->id_week]); 
 				}, */ 
 			],
+			[
+				'label'=> 'Action',
+				'value'=> function($model, $key, $index, $widget){
+					$week = Weekly::find()->where(['id_toProject'=>$model->id_project])->orderBy(['date_modified'=>SORT_DESC])->one();
+					if($week==null){
+						return Html::a('No update, Create one?',
+							['weekly/create', 'id'=>$model->id_project]);
+					}
+					else{
+						return $week->action." at ".$week->name_at." on ".$week->date_check;
+					}
+				},
+				'format'=>'raw',
+			],
 				
             ['class' => 'yii\grid\ActionColumn'],
 			//check box	
