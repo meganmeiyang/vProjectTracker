@@ -135,7 +135,7 @@ $this->params['breadcrumbs'][] = $this->title;
 					}
 					else{
 						$content=$week->item_week;
-						return Html::a($content,
+						return Html::a('week '.$week->num_week.": ".$content,
 							['weekly/view','id'=>$week->id_week]);
 						//['title'=>'view']
 						//);
