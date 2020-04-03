@@ -8,7 +8,7 @@ use app\models\WeeklySearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-
+use yii\filters\AccessControl;
 /**
  * WeeklyController implements the CRUD actions for Weekly model.
  */
@@ -20,6 +20,19 @@ class WeeklyController extends Controller
     public function behaviors()
     {
         return [
+			'access' => [
+                'class' => AccessControl::className(),
+                'only' => ['create', 'update', 'delete'],
+                'rules' => [
+                    [
+                        'actions' => ['create','update','delete'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
+			
+			
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
