@@ -26,7 +26,7 @@ use kartik\form\ActiveForm;
 		<div class="col-md-6"><?= $form->field($model, 'name_country')->textInput(['maxlength' => true]) ?> </div>
 	</div>
 	<div class="row">
-    <div class="col-md-4"><?= $form->field($model, 'role_customer')->dropDownList([1=>'MNO', 2=>'MVNO', 3=>'OEM', 4=>'OES', 5=>'ODM', 6=>'Government',7=>'Agency',8=>'Others'])?> </div>
+    <div class="col-md-4"><?= $form->field($model, 'role_customer')->dropDownList([1=>'MNO', 2=>'MVNO', 3=>'OEM', 4=>'OES', 5=>'ODM', 6=>'Government',7=>'Agency',8=>'Others',9=>'IDH'])?> </div>
 
     <div class="col-md-4"><?= $form->field($model, 'industry_customer')->dropDownList([1=>'IOT',2=>'Tourism']) ?> </div>
 	<div class="col-md-4"><?= $form->field($model, 'application')->textInput(['maxlength' => true]) ?> </div>
