@@ -79,7 +79,7 @@ class Project extends \yii\db\ActiveRecord
             'name_sales' => 'Sales',
             'name_FAE' => 'FAE',
             'name_PM' => 'PM',
-            'quantity_sim' => 'SIM QTY',
+            'quantity_sim' => 'SIM QTY(K)',
             'type_sim' => 'Type Sim',
             'service_data' => 'Service Data',
             'service_platform' => 'Service Platform',
@@ -101,11 +101,11 @@ class Project extends \yii\db\ActiveRecord
             'mode_selling' => 'Mode Selling',
             'industry_customer' => 'Industry Customer',
             'role_customer' => 'Customer Role',
-			'sales_weighed_total' => 'Weighed Projected Sales',
+			'sales_weighed_total' => 'Weighted Projected Sales(K)',
 			'name_supplier' => 'Supplier',
 			'exp_mp_date' => 'MP Schedule',
-			'sales_exp_total' => 'Total Projected Sales',
-			'sales_act_total' => 'Total Actual Sales',
+			'sales_exp_total' => 'Total Projected Sales(K)',
+			'sales_act_total' => 'Total Actual Sales(K)',
 			'application'=>'Application',	
         ];
     }

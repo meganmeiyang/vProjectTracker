@@ -53,6 +53,10 @@ $this->params['breadcrumbs'][] = $this->title;
 			'simtype.content_type_sim',
             [
 				'attribute'=>'quantity_sim',
+				
+				'value'=> function($model){
+					return $model->quantity_sim/1000;
+				},
 				'format'=> 'decimal',
 			],
             //'type_sim',
@@ -89,16 +93,25 @@ $this->params['breadcrumbs'][] = $this->title;
             
 			[
 				'attribute'=>'sales_exp_total',
+				'value'=>function($model){
+					return $model-> sales_exp_total/1000;
+				},
 				'format'=>'currency',	
 				'pageSummary' => true,		
 			],
 			[
 				'attribute'=>'sales_weighed_total',
+				'value'=>function($model){
+					return $model-> sales_weighed_total/1000;
+				},
 				'format'=>'currency',
 				'pageSummary' => true,	
 			],
             [
 				'attribute'=>'sales_act_total',
+				'value'=>function($model){
+					return $model-> sales_act_total/1000;
+				},
 				'format'=>'currency',
 				'pageSummary' => true,
 			],
