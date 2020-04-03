@@ -34,7 +34,7 @@ $this->params['breadcrumbs'][] = $this->title;
 			[
 				'attribute'=>'project.name_customer',	
 				'value'=>function($model, $key, $index, $widget){
-					return Html::a($model->project->name_customer,['project/view', 'id'=>$model->id_toProject]);
+					return Html::a($model->project->name_customer.": ".$model->project->application,['project/view', 'id'=>$model->id_toProject]);
 				},
 				'format'=>'raw',
 			],
