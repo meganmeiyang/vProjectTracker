@@ -118,7 +118,68 @@ $this->params['breadcrumbs'][] = $this->title;
 			'exp_mp_date',	
             //'tag_eSIM',
             //'progress',
-            'progressx.content_progress',
+					
+			[
+				'width'=>'60px',
+				'attribute'=>'progressx.content_progress',
+				'format'=>'raw',
+				/*'value'=>function($model){
+					$cur_week = Weekly::find()->where(['id_toProject'=>$model->id_project, 'num_week'=>date('W')])->orderBy(['date_modified'=>SORT_DESC])->one();
+					return empty($cur_week)?"empty week":$cur_week->old_progress_percent;
+				}*/
+					
+				'value' => function ($model) {
+                    // striped animated
+					//1. check last week
+					$cur_week = Weekly::find()->where(['id_toProject'=>$model->id_project, 'num_week'=>date('W')])->orderBy(['date_modified'=>SORT_DESC])->one();
+					//$last_week = Weekly::find()->where(['id_toProject'=>$model->id_project, 'num_week'<date('W')])->orderBy(['date_modified'=>SORT_DESC])->one();
+					
+					if ( empty($cur_week)
+						|| (!empty($cur_week) && empty($cur_week->old_progress_percent)) 
+						|| (!empty($cur_week) && ($cur_week->old_progress_percent == $model->progressx->value_progress))
+						)
+					{ //if current week is not updated, show current progress, no stack bar.
+						
+						return \yii\bootstrap\Progress::widget([
+                            	'percent' => $model->progressx->value_progress * 100,
+								'label'=> $model->progressx->content_progress,
+									//'labelOptions'=> ['style'=>'color:black',],
+								'barOptions'=>['class'=>'progress-bar-success'],
+								//'options'=>['style'=>'color:black']		
+                            	//'options' => //['class' => 'progress-success active progress-striped'],
+										//['class'=>'progress-bar-success'],
+						]);
+						//return $model->progressx->value_progress * 100;
+					}
+					
+					else{ //current week has update and update old progress!= current progress
+					
+					
+                    return \yii\bootstrap\Progress::widget([
+                        'bars'=>[
+							//last week
+							[
+                            	'percent' => $cur_week -> old_progress_percent * 100,
+								'label'=> ($cur_week -> old_progress_percent * 100). '%' ,
+								
+                            	'options' => //['class' => 'progress-success active progress-striped'],
+										['class'=>'progress-bar-success'], //green
+                        	],
+							[
+                            	'percent' => $model->progressx->value_progress * 100,
+								'label'=> $model->progressx->content_progress,
+							
+                            	'options' => //['class' => 'progress-success active progress-striped'],
+										['class'=>'progress-bar-info'], //blue
+							],	
+						]
+                    ]);
+					}
+                },	
+				
+					
+			],		
+            
 			'status.content_data_status',
 			/*[
 				

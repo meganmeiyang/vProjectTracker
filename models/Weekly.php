@@ -36,7 +36,8 @@ class Weekly extends \yii\db\ActiveRecord
     {
         return [
             [['id_toProject', 'num_week'], 'required'],
-            [['id_toProject', 'num_week'], 'integer'],
+            [['id_toProject', 'num_week', 'old_sales_sim','old_sales_data','old_sales_platform','old_sales_software','old_sales_act_sim','old_sales_act_data','old_sales_act_platform','old_sales_act_software'], 'integer'],
+			[['old_progress_percent'],'double'], //0.2 => 20%
             [['date_submitted', 'date_check', 'date_modified'], 'safe'],
             [['name_submitter', 'name_at', 'name_modifiedBy'], 'string', 'max' => 45],
 			[['action'], 'string','max' => 150],
@@ -63,6 +64,15 @@ class Weekly extends \yii\db\ActiveRecord
             'name_modifiedBy' => 'Modified By',
             'item_week' => 'Weekly Updates',
 			'project.name_customer' =>'Customer',
+			'old_progress_percent'=>'Last Progress',
+			'old_sales_sim'=>'Last Projected SIM Sales',
+			'old_sales_data'=>'Last Projected Data Sales',
+			'old_sales_platform'=>'Last Projected Platform Sales',
+			'old_sales_software'=>'Last Projected Software Sales',
+			'old_sales_act_sim'=>'Actual SIM Sales',
+			'old_sales_act_data'=>'Actual Data Sales',
+			'old_sales_act_platform'=>'Actual Platform Sales',
+			'old_sales_act_software'=>'Actual Software Sales',
         ];
     }
 

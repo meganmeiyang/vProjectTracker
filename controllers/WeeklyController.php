@@ -79,8 +79,21 @@ class WeeklyController extends Controller
     {
 		
         $model = new Weekly();
-		if($id!=null && $id!=0){
+		if(!empty($id)){
 			$model->id_toProject = $id;
+			$model->old_progress_percent = $model->project->progressx->value_progress;
+			//projected
+			$model->old_sales_sim = $model->project->sales_exp_sim;
+			$model->old_sales_data = $model->project->sales_exp_data;
+			$model->old_sales_platform = $model->project->sales_exp_platform;
+			$model->old_sales_software = $model->project->sales_exp_software;
+			//actual sales
+			$model->old_sales_act_sim = $model->project->sales_act_sim;
+			$model->old_sales_act_data = $model->project->sales_act_data;
+			$model->old_sales_act_platform = $model->project->sales_act_platform;
+			$model->old_sales_act_software = $model->project->sales_act_software;			
+			
+						
 		}
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
