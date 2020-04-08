@@ -9,6 +9,8 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
+use yii\helpers\Json;
+use app\models\Project;
 /**
  * WeeklyController implements the CRUD actions for Weekly model.
  */
@@ -78,6 +80,7 @@ class WeeklyController extends Controller
     public function actionCreate($id=0)
     {
 		
+		
         $model = new Weekly();
 		if(!empty($id)){
 			$model->id_toProject = $id;
@@ -105,6 +108,21 @@ class WeeklyController extends Controller
             'model' => $model
         ]);
     }
+	
+	public function actionAjprocess(){
+		yii::error(" here is ajprocess");
+		$id = (int)($_POST['selected']); //$id of project
+		yii::error("selected id is ".$id);
+		yii::error(is_integer($id));
+		$progress = Project::find($id)->one()->progress; //need only the ID
+		yii::error("progress is ".$progress);
+		\Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+		return [
+			'progress'=> $progress, //provide only the ID
+			'code'=>100,
+		];
+		
+	}
 
     /**
      * Updates an existing Weekly model.

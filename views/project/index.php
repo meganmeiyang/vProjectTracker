@@ -37,7 +37,14 @@ $this->params['breadcrumbs'][] = $this->title;
             //'created_on',
             //'created_by',
 			'name_country',
-            'name_customer',
+            [
+				'attribute'=>'name_customer',
+					
+					
+				
+				//['style'=>'color:#333333'],
+				
+			],
             //'role_customer',
 			'role.content_role',
             //'industry_customer',
@@ -136,7 +143,7 @@ $this->params['breadcrumbs'][] = $this->title;
 					
 					if ( empty($cur_week)
 						|| (!empty($cur_week) && empty($cur_week->old_progress_percent)) 
-						|| (!empty($cur_week) && ($cur_week->old_progress_percent == $model->progressx->value_progress))
+						|| (!empty($cur_week) && ($cur_week->old_progress_percent == $model->progress))
 						)
 					{ //if current week is not updated, show current progress, no stack bar.
 						
@@ -159,8 +166,8 @@ $this->params['breadcrumbs'][] = $this->title;
                         'bars'=>[
 							//last week
 							[
-                            	'percent' => $cur_week -> old_progress_percent * 100,
-								'label'=> ($cur_week -> old_progress_percent * 100). '%' ,
+                            	'percent' => $cur_week -> progressx ->value_progress * 100,
+								//'label'=> ($cur_week -> progressx->value_progress * 100). '%' ,
 								
                             	'options' => //['class' => 'progress-success active progress-striped'],
 										['class'=>'progress-bar-success'], //green
@@ -289,6 +296,10 @@ $this->params['breadcrumbs'][] = $this->title;
         '{export}',
         '{toggleData}',
     ],
+	'resizableColumns'=>true,
+	'floatHeader'=>true,
+	'floatHeaderOptions'=>['top'=>'50'],
+	
     // set export properties
     'export' => [
         'fontAwesome' => true,

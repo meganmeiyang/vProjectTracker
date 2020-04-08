@@ -36,8 +36,8 @@ class Weekly extends \yii\db\ActiveRecord
     {
         return [
             [['id_toProject', 'num_week'], 'required'],
-            [['id_toProject', 'num_week', 'old_sales_sim','old_sales_data','old_sales_platform','old_sales_software','old_sales_act_sim','old_sales_act_data','old_sales_act_platform','old_sales_act_software'], 'integer'],
-			[['old_progress_percent'],'double'], //0.2 => 20%
+            [['id_toProject', 'num_week', 'old_progress_percent',  'old_sales_sim','old_sales_data','old_sales_platform','old_sales_software','old_sales_act_sim','old_sales_act_data','old_sales_act_platform','old_sales_act_software'], 'integer'],
+			//[['old_progress_percent'],'double'], //0.2 => 20%
             [['date_submitted', 'date_check', 'date_modified'], 'safe'],
             [['name_submitter', 'name_at', 'name_modifiedBy'], 'string', 'max' => 45],
 			[['action'], 'string','max' => 150],
@@ -89,6 +89,10 @@ class Weekly extends \yii\db\ActiveRecord
 		
 		return $this->hasOne(Project::className(), ['id_project'=>'id_toProject']);
 	}
+	public function getProgressx(){
+		
+		return $this->hasOne(DataProgress::className(), ['iddata_progress'=>'old_progress_percent']);
+	}	
 	
 	public function beforeSave($insert)
     {
@@ -113,6 +117,14 @@ class Weekly extends \yii\db\ActiveRecord
 		else{
 			$this->name_modifiedBy = $username;
 			$this->date_modified = $time;    
+		}
+		$project = $this->project;
+		//change project progress;
+		if($project->progress!=$this->old_progress_percent){//old_progress_percent becomes new progress
+			$new_progress = $this->old_progress_percent;
+			$this->old_progress_percent = $project->progress; //set to old_progress
+			$project->progress = $new_progress;
+			$project->save(); //save new progress to project model
 		}
 		
 		return true;
