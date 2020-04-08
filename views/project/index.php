@@ -33,13 +33,18 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             //['class' => 'yii\grid\SerialColumn'],
 
-            'id_project',
-            //'created_on',
+            [   'width'=>'17px',
+				'attribute'=>'id_project',
+            ],
+			//'created_on',
             //'created_by',
-			'name_country',
+			[
+				'width'=>'30px',
+				'attribute'=>'name_country',
+			],
             [
 				'attribute'=>'name_customer',
-					
+				'width'=>'35px',	
 					
 				
 				//['style'=>'color:#333333'],
@@ -100,6 +105,7 @@ $this->params['breadcrumbs'][] = $this->title;
             
 			[
 				'attribute'=>'sales_exp_total',
+				'label'=>'Total Projected(K)',
 				'value'=>function($model){
 					return $model-> sales_exp_total/1000;
 				},
@@ -108,6 +114,7 @@ $this->params['breadcrumbs'][] = $this->title;
 			],
 			[
 				'attribute'=>'sales_weighed_total',
+				'label'=>'Weighted Projected(K)',
 				'value'=>function($model){
 					return $model-> sales_weighed_total/1000;
 				},
@@ -186,9 +193,10 @@ $this->params['breadcrumbs'][] = $this->title;
 				
 					
 			],		
-            
+				
 			'status.content_data_status',
 			/*[
+				
 				
 				'label'=>'Progress',
 				'value'=> function($model, $key, $index, $widget){
@@ -205,6 +213,7 @@ $this->params['breadcrumbs'][] = $this->title;
             //week
 			[
 				'label'=> 'Weekly Updates',
+				'width'=>'100px',
 				//'filter'=>ArrayHelper::map(Weekly::find()->orderBy('date_modified')->asArray()->all(), 'id_week', 'item_week'),
 				//'attribute'=> Project::find()=>where(['id'=>])
 				//'attribute'=>'weekx.item_week', //weekly updates
@@ -232,6 +241,7 @@ $this->params['breadcrumbs'][] = $this->title;
 				}, */ 
 			],
 			[
+				'width'=>'100px',
 				'label'=> 'Action',
 				'value'=> function($model, $key, $index, $widget){
 					$week = Weekly::find()->where(['id_toProject'=>$model->id_project])->orderBy(['date_modified'=>SORT_DESC])->one();
