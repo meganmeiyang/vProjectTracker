@@ -276,7 +276,27 @@ $this->params['breadcrumbs'][] = $this->title;
 				'format'=>'raw',
 			],
 				
-            ['class' => 'yii\grid\ActionColumn'],
+            [
+				'class' => 'yii\grid\ActionColumn',
+				'template' => '{view} {update} {delete} {weekly}',
+				'buttons'=>[
+					 'weekly' => function ($url, $model) {
+               				 return Html::a('<span class="glyphicon glyphicon-calendar"></span>', $url, 
+							 [ 
+								 'title' => Yii::t('app', 'weekly'),
+						     ]
+						     );
+					}
+            	],
+				'urlCreator' => function ($action, $model, $key, $index) {
+            		if ($action === 'weekly') {
+                		$url =Url::to(['weekly/create', 'id'=>$model->id_project]);
+                		return $url;
+					}
+				},
+					
+			
+			],
 			//check box	
 			[
     			'class' => 'kartik\grid\CheckboxColumn',
