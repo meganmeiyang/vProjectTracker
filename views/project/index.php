@@ -213,7 +213,7 @@ $this->params['breadcrumbs'][] = $this->title;
             //week
 			[
 				'label'=> 'Weekly Updates',
-				'width'=>'100px',
+				'width'=>'150px',
 				//'filter'=>ArrayHelper::map(Weekly::find()->orderBy('date_modified')->asArray()->all(), 'id_week', 'item_week'),
 				//'attribute'=> Project::find()=>where(['id'=>])
 				//'attribute'=>'weekx.item_week', //weekly updates
@@ -241,7 +241,7 @@ $this->params['breadcrumbs'][] = $this->title;
 				}, */ 
 			],
 			[
-				'width'=>'100px',
+				'width'=>'150px',
 				'label'=> 'Action',
 				'value'=> function($model, $key, $index, $widget){
 					$week = Weekly::find()->where(['id_toProject'=>$model->id_project])->orderBy(['date_modified'=>SORT_DESC])->one();
