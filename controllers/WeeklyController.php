@@ -84,7 +84,7 @@ class WeeklyController extends Controller
         $model = new Weekly();
 		if(!empty($id)){
 			$model->id_toProject = $id;
-			$model->old_progress_percent = $model->project->progressx->value_progress;
+			$model->old_progress_percent = $model->project->progress;
 			//projected
 			$model->old_sales_sim = $model->project->sales_exp_sim;
 			$model->old_sales_data = $model->project->sales_exp_data;
