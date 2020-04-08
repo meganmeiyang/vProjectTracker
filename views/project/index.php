@@ -105,7 +105,7 @@ $this->params['breadcrumbs'][] = $this->title;
             
 			[
 				'attribute'=>'sales_exp_total',
-				
+				'width'=>'40px',
 				'label'=>'Projected(K)',
 				'value'=>function($model){
 					return $model-> sales_exp_total/1000;
@@ -115,6 +115,7 @@ $this->params['breadcrumbs'][] = $this->title;
 			],
 			[
 				'attribute'=>'sales_weighed_total',
+					'width'=>'40px',
 				'label'=>'Weighted Sales(K)',
 				'value'=>function($model){
 					return $model-> sales_weighed_total/1000;
@@ -125,6 +126,7 @@ $this->params['breadcrumbs'][] = $this->title;
             [
 				'attribute'=>'sales_act_total',
 				'label'=>'Actual(K)',
+					'width'=>'40px',
 				'value'=>function($model){
 					return $model-> sales_act_total/1000;
 				},
