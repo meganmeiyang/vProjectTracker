@@ -74,6 +74,7 @@ $this->params['breadcrumbs'][] = $this->title;
             //'type_sim',
             [
 				'label'=>'Data requirements',
+					'width'=>'60px',
 				'attribute'=>'name_supplier',
 				'value' => function ($model, $key, $index, $widget) { 
 					if($model->service_data == 2){//No
