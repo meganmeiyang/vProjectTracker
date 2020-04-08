@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
+
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\WeeklySearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -10,6 +11,11 @@ use yii\widgets\Pjax;
 $this->title = 'Weeklies';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+
+
+
+
+
 <div class="weekly-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
