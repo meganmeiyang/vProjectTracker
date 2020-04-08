@@ -29,7 +29,7 @@ $this->registerJs(
 	
 	//once project is selected, the old-progress of this project will be loaded automatically
 	"$('#weekly-id_toproject').on('select2:select', function(e){
-		console.log(e);
+		console.log(e.params.data.id);
 		$.ajax({
 		
 		type:'POST',

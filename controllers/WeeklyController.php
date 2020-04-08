@@ -110,12 +110,14 @@ class WeeklyController extends Controller
     }
 	
 	public function actionAjprocess(){
-		yii::error(" here is ajprocess");
+		//yii::error(" here is ajprocess");
 		$id = (int)($_POST['selected']); //$id of project
-		yii::error("selected id is ".$id);
-		yii::error(is_integer($id));
-		$progress = Project::find($id)->one()->progress; //need only the ID
-		yii::error("progress is ".$progress);
+		//yii::error("selected id is ".$id);
+		//yii::error(is_integer($id));
+		$prj = Project::find()->where(['id_project'=>$id])->one();
+		//yii::error("project is ".$prj->name_customer." id=".$prj->id_project." progress=".$prj->progress);
+		$progress = $prj->progress; //need only the ID
+		//yii::error("progress is ".$progress);
 		\Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
 		return [
 			'progress'=> $progress, //provide only the ID
