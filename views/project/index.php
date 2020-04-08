@@ -62,7 +62,7 @@ $this->params['breadcrumbs'][] = $this->title;
 			],
 			[
 				'attribute'=>'name_sales',
-					'width'=>'60px',
+					'width'=>'50px',
 			],
             //'text_requirements',
             //'text_solutions',
@@ -77,7 +77,7 @@ $this->params['breadcrumbs'][] = $this->title;
 			],
             [
 				'attribute'=>'quantity_sim',
-				'width'=>'40px',
+				'width'=>'30px',
 				'value'=> function($model){
 					return $model->quantity_sim/1000;
 				},
@@ -86,7 +86,7 @@ $this->params['breadcrumbs'][] = $this->title;
             //'type_sim',
             [
 				'label'=>'Data requirements',
-					'width'=>'60px',
+					'width'=>'50px',
 				'attribute'=>'name_supplier',
 				'value' => function ($model, $key, $index, $widget) { 
 					if($model->service_data == 2){//No
@@ -146,7 +146,10 @@ $this->params['breadcrumbs'][] = $this->title;
 				'format'=>'currency',
 				'pageSummary' => true,
 			],
-			'exp_mp_date',	
+			[
+				'attribute'=>'exp_mp_date',	
+					'width'=>'50px',
+			],
             //'tag_eSIM',
             //'progress',
 					
@@ -230,7 +233,7 @@ $this->params['breadcrumbs'][] = $this->title;
             //week
 			[
 				'label'=> 'Weekly Updates',
-				'width'=>'150px',
+				'width'=>'170px',
 				//'filter'=>ArrayHelper::map(Weekly::find()->orderBy('date_modified')->asArray()->all(), 'id_week', 'item_week'),
 				//'attribute'=> Project::find()=>where(['id'=>])
 				//'attribute'=>'weekx.item_week', //weekly updates
@@ -258,7 +261,7 @@ $this->params['breadcrumbs'][] = $this->title;
 				}, */ 
 			],
 			[
-				'width'=>'150px',
+				'width'=>'170px',
 				'label'=> 'Action',
 				'value'=> function($model, $key, $index, $widget){
 					$week = Weekly::find()->where(['id_toProject'=>$model->id_project])->orderBy(['date_modified'=>SORT_DESC])->one();
