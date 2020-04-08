@@ -51,10 +51,19 @@ $this->params['breadcrumbs'][] = $this->title;
 				
 			],
             //'role_customer',
-			'role.content_role',
+			[
+				'attribute'=>'role.content_role',
+					'width'=>'20px',
+			],
             //'industry_customer',
-            'application',
-			'name_sales',
+            [
+				'attribute'=>'application',
+					'width'=>'45px',
+			],
+			[
+				'attribute'=>'name_sales',
+					'width'=>'60px',
+			],
             //'text_requirements',
             //'text_solutions',
 			//'mode_selling',
@@ -62,10 +71,13 @@ $this->params['breadcrumbs'][] = $this->title;
             //'name_sales',
             //'name_FAE',
             //'name_PM',
-			'simtype.content_type_sim',
+			[
+				'attribute'=>'simtype.content_type_sim',
+					'width'=>'40px',
+			],
             [
 				'attribute'=>'quantity_sim',
-				
+				'width'=>'40px',
 				'value'=> function($model){
 					return $model->quantity_sim/1000;
 				},
@@ -311,7 +323,7 @@ $this->params['breadcrumbs'][] = $this->title;
         '{export}',
         '{toggleData}',
     ],
-	'resizableColumns'=>true,
+	//'resizableColumns'=>true,
 	'floatHeader'=>true,
 	'floatHeaderOptions'=>['top'=>'50'],
 	
