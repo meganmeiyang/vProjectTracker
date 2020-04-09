@@ -289,12 +289,14 @@ $this->params['breadcrumbs'][] = $this->title;
 						     );
 					}
             	],
+					/*
 				'urlCreator' => function ($action, $model, $key, $index) {
             		if ($action === 'weekly') {
                 		$url =Url::to(['weekly/create', 'id'=>$model->id_project]);
                 		return $url;
 					}
-				},
+					
+				},*/
 					
 			
 			],

@@ -25,12 +25,17 @@ class ProjectController extends Controller
         return [
 			'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['create', 'update', 'delete'],
+                'only' => ['index','view','create', 'update', 'delete','weekly'],
                 'rules' => [
                     [
-                        'actions' => ['create','update','delete'],
+                        'actions' => ['index','view','weekly'],
                         'allow' => true,
                         'roles' => ['@'],
+                    ],
+					[
+                        'actions' => ['create','update','delete'],
+                        'allow' => true,
+                        'roles' => ['createPost'],
                     ],
                 ],
             ],
@@ -137,6 +142,13 @@ class ProjectController extends Controller
         return $this->redirect(['index']);
     }
 
+	public function actionWeekly($id)
+	{
+
+
+        return $this->redirect(['weekly/create','id'=>$id]);
+		
+	}
    
 	
     /**

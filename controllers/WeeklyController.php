@@ -24,13 +24,18 @@ class WeeklyController extends Controller
         return [
 			'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['create', 'update', 'delete'],
+                'only' => ['index','view','create', 'update', 'delete'],
                 'rules' => [
                     [
-                        'actions' => ['create','update','delete'],
+                        'actions' => ['index','view'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
+					[
+                        'actions' => ['create','update','delete'],
+                        'allow' => true,
+                        'roles' => ['createPost'],
+                    ],	
                 ],
             ],
 			
