@@ -11,7 +11,7 @@ $this->title = 'LinksField Project Tracker';
 
         <p class="lead">This is the LinksField Overseas Project Tracker. </p>
 
-        <p><a class="btn btn-lg btn-success" href="?r=project%2Findex">Enter Projects</a></p>
+        <p><a class="btn btn-lg button3" href="?r=project%2Findex">Enter Projects</a></p>
     </div>
 
     

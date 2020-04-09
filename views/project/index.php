@@ -21,7 +21,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Project', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Create Project', ['create'], ['class' => 'btn button3']) ?>
     </p>
 
     <?php Pjax::begin(); ?>
@@ -367,7 +367,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'type' => GridView::TYPE_DEFAULT,
         'heading' => true,
     ], 
-    'persistResize' => false,
+    'persistResize' => true,
     'toggleDataOptions' => ['minCount' => 10],
     'exportConfig' => [
     		GridView::CSV => ['label' => 'Save as CSV'],
