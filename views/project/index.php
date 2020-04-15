@@ -214,8 +214,9 @@ $this->params['breadcrumbs'][] = $this->title;
 				
 					
 			],		
-				
-			'status.content_data_status',
+			[	
+			'attribute'=>'status.content_data_status',
+				'width' => '20px',
 			/*[
 				
 				
@@ -229,7 +230,7 @@ $this->params['breadcrumbs'][] = $this->title;
 				
 			],*/	
 			//'statusy',
-            
+            ],
 			//'name_operation',
             //week
 			[
